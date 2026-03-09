@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="near_black">#FF212121</color>
+    <color name="off_white">#FFFAFAFA</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="permission_warning_background">#FFCC0000</color>
+    <color name="button_start">#2E7D32</color>
+    <color name="button_stop">#C62828</color>
+</resources>

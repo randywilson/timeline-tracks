@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Adaptive icon foreground layer (108x108dp, safe zone 18–90).
+  Black GPS pin with white inner circle + 3 trailing dots below the tip.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!--
+      Pin shape: start at tip (54,68), bezier up the left side to the circle
+      edge (41,42), counter-clockwise arc over the top to (67,42), bezier
+      back down the right side to tip.
+    -->
+    <path
+        android:fillColor="#212121"
+        android:pathData="M 54,68
+                          C 43,58 41,51 41,42
+                          A 13,13 0 0,0 67,42
+                          C 67,51 65,58 54,68 Z" />
+
+    <!--
+      Inner circle: two counter-clockwise semicircles centred at (54,42) r=8.
+      Upper half (46,42)→(62,42), lower half (62,42)→(46,42).
+    -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M 46,42
+                          A 8,8 0 0,0 62,42
+                          A 8,8 0 0,0 46,42 Z" />
+
+    <!-- Trailing dot 1 — r=2.5, closest to pin tip -->
+    <path
+        android:fillColor="#212121"
+        android:pathData="M 51.5,74 A 2.5,2.5 0 0,0 56.5,74 A 2.5,2.5 0 0,0 51.5,74 Z" />
+
+    <!-- Trailing dot 2 — r=2 -->
+    <path
+        android:fillColor="#212121"
+        android:pathData="M 52,80 A 2,2 0 0,0 56,80 A 2,2 0 0,0 52,80 Z" />
+
+    <!-- Trailing dot 3 — r=1.5, furthest from pin tip -->
+    <path
+        android:fillColor="#212121"
+        android:pathData="M 52.5,86 A 1.5,1.5 0 0,0 55.5,86 A 1.5,1.5 0 0,0 52.5,86 Z" />
+
+</vector>

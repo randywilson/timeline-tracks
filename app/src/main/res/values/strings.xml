@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Timeline Tracks</string>
+
+    <!-- Permission banner -->
+    <string name="permission_warning">Location permission (including background access) is required.
+        Tap below to open Settings, then choose Permissions → Location → Allow all the time.</string>
+    <string name="give_permission">Give Permission</string>
+
+    <!-- Main UI -->
+    <string name="interval_label">Seconds between GPS readings</string>
+    <string name="auto_stop_label">Auto-stop when stationary</string>
+    <string name="how_it_works">How it works</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="go_to_settings">Go to Settings</string>
+
+    <!-- Notification permission denied dialog -->
+    <string name="notification_permission_title">Notification Required</string>
+    <string name="notification_permission_message">Timeline Tracks needs permission to show a
+        notification while it\'s running. Without it, there\'s no way to see that tracking is
+        active or to stop it — you might forget it\'s on.\n\nTap Go to Settings, then enable
+        Notifications for Timeline Tracks.</string>
+
+    <!-- How It Works dialog -->
+    <string name="how_it_works_title">How Timeline Tracks Works</string>
+    <string name="how_it_works_message">Timeline Tracks runs in the background, requesting GPS
+        locations at your chosen interval, then discarding them. A side effect is that Google
+        Timeline — and any other app on your phone — receives those locations for free, without
+        needing to request GPS themselves.\n\nThis is especially useful when hiking, sailing, or
+        anywhere Wi-Fi location doesn\'t work well. A shorter interval gives Timeline higher-quality
+        tracks; a longer interval saves battery.\n\nAuto-stop: If 5 consecutive locations are all
+        within 100 meters of each other, the app assumes you\'re stationary and stops
+        automatically.\n\nTimeline Tracks is 100% privacy-safe: it never stores your locations,
+        runs entirely on your phone, and has no internet permission — so it\'s physically
+        impossible for it to send your location data anywhere. It\'s also completely free.</string>
+
+    <!-- Notification -->
+    <string name="notification_channel_name">Location Updates</string>
+    <string name="notification_channel_desc">Persistent notification while GPS tracking is active</string>
+    <string name="notification_text">Reading GPS every %d seconds</string>
+</resources>

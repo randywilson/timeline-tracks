@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Adaptive icon background layer (108x108dp).
+  Bottom ~35%: tan/dirt ground. Top ~65%: sky blue.
+  Small mountain on the right, peak in the sky, with a light snow cap.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Sky blue (fills top portion down to the horizon at y=70) -->
+    <path
+        android:fillColor="#89C4E1"
+        android:pathData="M0,0 L108,0 L108,70 L0,70 Z" />
+
+    <!--
+      Mountain — right side of icon. Left foot (65,70), peak (84,46),
+      right slope extends off-screen to (108,68), back down to (108,70).
+    -->
+    <path
+        android:fillColor="#7A9BA8"
+        android:pathData="M65,70 L84,46 L108,68 L108,70 Z" />
+
+    <!-- Snow cap — small triangle at the mountain peak -->
+    <path
+        android:fillColor="#E8F0F3"
+        android:pathData="M84,46 L79,56 L89,56 Z" />
+
+    <!-- Tan/dirt ground (horizon y=70 to bottom) -->
+    <path
+        android:fillColor="#C4A87A"
+        android:pathData="M0,70 L108,70 L108,108 L0,108 Z" />
+
+</vector>
