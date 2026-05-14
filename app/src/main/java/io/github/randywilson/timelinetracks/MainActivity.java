@@ -13,7 +13,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.google.android.material.textfield.TextInputLayout;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -46,11 +49,26 @@ public class MainActivity extends AppCompatActivity {
         intervalField = findViewById(R.id.interval_field);
         autoStopCheckbox = findViewById(R.id.auto_stop_checkbox);
         startStopButton = findViewById(R.id.start_stop_button);
+        TextView aboutLink = findViewById(R.id.about_link);
         TextView howItWorksLink = findViewById(R.id.how_it_works_link);
 
         // Load saved settings
         intervalField.setText(String.valueOf(prefs.getIntervalSeconds()));
         autoStopCheckbox.setChecked(prefs.getAutoStop());
+
+        TextInputLayout intervalLayout = findViewById(R.id.interval_layout);
+        intervalLayout.setEndIconOnClickListener(v ->
+                new AlertDialog.Builder(this)
+                        .setMessage(R.string.interval_info_message)
+                        .setPositiveButton(R.string.ok, null)
+                        .show());
+
+        ImageView autoStopInfo = findViewById(R.id.auto_stop_info);
+        autoStopInfo.setOnClickListener(v ->
+                new AlertDialog.Builder(this)
+                        .setMessage(R.string.auto_stop_info_message)
+                        .setPositiveButton(R.string.ok, null)
+                        .show());
 
         givePermissionButton.setOnClickListener(v -> openAppSettings());
 
@@ -61,6 +79,13 @@ public class MainActivity extends AppCompatActivity {
                 startTracking();
             }
         });
+
+        aboutLink.setOnClickListener(v ->
+                new AlertDialog.Builder(this)
+                        .setTitle(R.string.about_title)
+                        .setMessage(R.string.about_message)
+                        .setPositiveButton(R.string.ok, null)
+                        .show());
 
         howItWorksLink.setOnClickListener(v -> showHowItWorksDialog());
 
