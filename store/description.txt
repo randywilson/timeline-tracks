@@ -1,0 +1,16 @@
+Timeline Tracks keeps your location history paths accurate even when you're in the outdoors: hiking, sailing, hang gliding, or anywhere your phone isn't near Wi-Fi access points.
+
+It works by requesting a GPS location at a regular interval (you choose how often). Every app on your phone that uses location, including Google Timeline, receives those fixes automatically. No special integration needed.
+
+I spent years as a software engineer on Google Timeline. I built this app for my own hiking and sailing. Others might find it useful too.
+
+Simple by design:
+  - Set your interval (anywhere from seconds to hours)
+  - Tap Start — it runs in the background
+  - Tap Stop, or let it auto-stop when you're stationary
+
+Privacy: No data is collected, stored, or transmitted. The app has no internet permission: it can't send your locations anywhere.
+
+Free and open source (GPL-3.0). See https://github.com/randywilson/timeline-tracks.
+
+This app is an independent utility and is not affiliated with, endorsed by, or a product of Google LLC.
