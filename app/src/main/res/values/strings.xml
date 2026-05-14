@@ -34,7 +34,7 @@
         tracks; a longer interval saves battery.\n\nAuto-stop: If 5 consecutive locations are all
         within 100 meters of each other, the app assumes you\'re stationary and stops
         automatically.\n\nTimeline Tracks is 100% privacy-safe: it never stores your locations,
-        runs entirely on your phone, and has no internet permission — so it\'s physically
+        runs entirely on your phone, and has no internet permission — so it\'s
         impossible for it to send your location data anywhere. It\'s also completely free.</string>
 
     <!-- Notification -->
