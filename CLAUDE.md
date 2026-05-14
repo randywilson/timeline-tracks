@@ -21,9 +21,12 @@ app/src/main/
   res/
     layout/activity_main.xml
     values/{strings,colors,themes}.xml
-    drawable/{ic_launcher,ic_launcher_background,ic_launcher_foreground,ic_notification}.xml
-    mipmap-anydpi-v26/{ic_launcher,ic_launcher_round}.xml   adaptive icon
-    mipmap-anydpi/ic_launcher.xml                           API 23-25 fallback
+    drawable/{ic_launcher_background,ic_notification,ic_info}.xml   vectors
+    drawable-{mdpi,hdpi,xhdpi,xxhdpi,xxxhdpi}/
+      ic_launcher_foreground.png   adaptive icon foreground (72dp in 108dp canvas)
+      ic_title.png                 title bar icon (white-on-transparent pin+dots)
+    mipmap-anydpi-v26/{ic_launcher,ic_launcher_round}.xml   adaptive icon (API 26+)
+    mipmap-{mdpi,hdpi,xhdpi,xxhdpi,xxxhdpi}/ic_launcher.png legacy launcher icon
 ```
 
 ## Architecture
@@ -33,4 +36,4 @@ app/src/main/
 - **Notification**: `IMPORTANCE_DEFAULT`, channel ID `location_updates`. Stop action → `StopReceiver` → `stopService` + surface `MainActivity`.
 - **Permissions**: `ACCESS_FINE_LOCATION` + `ACCESS_BACKGROUND_LOCATION` (API 29+) required to start. `POST_NOTIFICATIONS` (API 33+) requested at Start tap, not at launch; denied → dialog explaining why it's needed, service does not start.
 - **Button colors**: green (`#2E7D32`) = Start, red (`#C62828`) = Stop, managed by `updateStartStopButton(boolean)`.
-- **Theme**: `Theme.MaterialComponents.Light.NoActionBar`, near-black (`#212121`) primary, off-white (`#FAFAFA`) background. Custom title bar in layout (avoids action bar overlap issues).
+- **Theme**: `Theme.MaterialComponents.Light.NoActionBar`, near-black (`#212121`) primary. Sky blue (`#89B9D7`) title bar and status bar (light status bar mode); ground brown (`#B58251`) screen background. Content area is a single off-white (`#FAFAFA`) card with 16dp corners floating in the brown. Custom title bar in layout (avoids action bar overlap issues).
