@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="near_black">#FF212121</color>
+    <color name="sky_blue">#FF89B9D7</color>
+    <color name="ground_brown">#FFB58251</color>
     <color name="off_white">#FFFAFAFA</color>
     <color name="white">#FFFFFFFF</color>
     <color name="permission_warning_background">#FFCC0000</color>
