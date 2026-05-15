@@ -6,6 +6,7 @@
     <color name="off_white">#FFFAFAFA</color>
     <color name="white">#FFFFFFFF</color>
     <color name="permission_warning_background">#FFCC0000</color>
+    <color name="link_blue">#FF1565C0</color>
     <color name="button_start">#2E7D32</color>
     <color name="button_stop">#C62828</color>
 </resources>

@@ -10,8 +10,15 @@ public class Prefs {
     private static final String KEY_AUTO_STOP = "auto_stop";
     private static final String KEY_RUNNING = "running";
     private static final String KEY_BATTERY_OPT_ASKED = "battery_opt_asked";
+    private static final String KEY_START_TIME = "start_time";
+    private static final String KEY_STOP_TIME = "stop_time";
+    private static final String KEY_LOCATION_COUNT = "location_count";
+    private static final String KEY_STOP_REASON = "stop_reason";
 
-    private static final int DEFAULT_INTERVAL = 120;
+    public static final String STOP_REASON_USER = "stopped";
+    public static final String STOP_REASON_AUTO = "auto-stopped";
+
+    private static final int DEFAULT_INTERVAL = 110;
     private static final boolean DEFAULT_AUTO_STOP = true;
 
     private final SharedPreferences prefs;
@@ -50,5 +57,41 @@ public class Prefs {
 
     public void setBatteryOptAsked() {
         prefs.edit().putBoolean(KEY_BATTERY_OPT_ASKED, true).apply();
+    }
+
+    public long getStartTime() {
+        return prefs.getLong(KEY_START_TIME, 0L);
+    }
+
+    public void setStartTime(long millis) {
+        prefs.edit().putLong(KEY_START_TIME, millis).apply();
+    }
+
+    public long getStopTime() {
+        return prefs.getLong(KEY_STOP_TIME, 0L);
+    }
+
+    public void setStopTime(long millis) {
+        prefs.edit().putLong(KEY_STOP_TIME, millis).apply();
+    }
+
+    public String getStopReason() {
+        return prefs.getString(KEY_STOP_REASON, STOP_REASON_USER);
+    }
+
+    public void setStopReason(String reason) {
+        prefs.edit().putString(KEY_STOP_REASON, reason).apply();
+    }
+
+    public int getLocationCount() {
+        return prefs.getInt(KEY_LOCATION_COUNT, 0);
+    }
+
+    public void setLocationCount(int count) {
+        prefs.edit().putInt(KEY_LOCATION_COUNT, count).apply();
+    }
+
+    public void incrementLocationCount() {
+        prefs.edit().putInt(KEY_LOCATION_COUNT, getLocationCount() + 1).apply();
     }
 }

@@ -30,8 +30,11 @@
         Notifications for Timeline Tracks.</string>
 
     <!-- Info popups -->
-    <string name="interval_info_message">A shorter interval gives Timeline higher-quality tracks; a longer interval saves battery.</string>
-    <string name="auto_stop_info_message">If 5 consecutive locations are all within 100 meters of each other, the app assumes you\'re stationary and stops automatically.</string>
+    <string name="interval_info_message">A shorter interval gives Timeline higher-quality tracks;
+        a longer interval saves battery. The default, just under 2 minutes, is a good compromise.
+    </string>
+    <string name="auto_stop_info_message">If 5 consecutive locations are all within 100 meters of
+        each other, the app assumes you\'re stationary and stops automatically.</string>
 
     <!-- How It Works dialog -->
     <string name="how_it_works_title">How Timeline Tracks Works</string>

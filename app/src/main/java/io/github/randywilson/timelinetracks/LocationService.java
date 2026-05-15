@@ -8,14 +8,18 @@ import android.app.Service;
 import android.content.Intent;
 import android.content.pm.ServiceInfo;
 import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
 import android.os.Build;
-import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
 
 import androidx.core.app.NotificationCompat;
+
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationCallback;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationResult;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.location.Priority;
 
 import java.util.ArrayDeque;
 
@@ -23,24 +27,24 @@ public class LocationService extends Service {
 
     private static final int NOTIFICATION_ID = 1;
     private static final String CHANNEL_ID = "location_updates";
-    private static final int MAX_RECENT = 5;
+    private static final int MAX_RECENT = 4;
     private static final float AUTO_STOP_RADIUS_METERS = 100f;
 
-    private LocationManager locationManager;
-    private Handler handler;
+    private FusedLocationProviderClient fusedClient;
     private Prefs prefs;
-    private int intervalMillis;
     private boolean autoStop;
     private ArrayDeque<Location> recentLocations;
-    private volatile boolean isStopping = false;
 
-    private final LocationListener locationListener = new LocationListener() {
+    private final LocationCallback locationCallback = new LocationCallback() {
         @Override
-        public void onLocationChanged(Location location) {
+        public void onLocationResult(LocationResult result) {
+            Location location = result.getLastLocation();
+            if (location == null) return;
             // We intentionally do nothing with this location.
             // The entire purpose of requesting it is the side effect:
-            // Android broadcasts GPS fixes to all registered apps, so Google Timeline
-            // (and any other location-aware app) receives this location for free.
+            // FusedLocationProviderClient feeds fixes directly into Google Play Services,
+            // so Google Timeline (and any other location-aware app) receives them for free.
+            prefs.incrementLocationCount();
             if (autoStop) {
                 checkAutoStop(location);
             }
@@ -52,17 +56,15 @@ public class LocationService extends Service {
     public void onCreate() {
         super.onCreate();
         createNotificationChannel();
-        locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-        handler = new Handler(Looper.getMainLooper());
+        fusedClient = LocationServices.getFusedLocationProviderClient(this);
         prefs = new Prefs(this);
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        intervalMillis = prefs.getIntervalSeconds() * 1000;
+        long intervalMillis = (long) prefs.getIntervalSeconds() * 1000;
         autoStop = prefs.getAutoStop();
         recentLocations = new ArrayDeque<>();
-        isStopping = false;
 
         prefs.setRunning(true);
 
@@ -74,30 +76,17 @@ public class LocationService extends Service {
             startForeground(NOTIFICATION_ID, notification);
         }
 
-        requestLocation();
-        return START_STICKY;
-    }
+        LocationRequest request = new LocationRequest.Builder(Priority.PRIORITY_HIGH_ACCURACY, intervalMillis)
+                .setMinUpdateIntervalMillis(intervalMillis)
+                .setWaitForAccurateLocation(false)
+                .build();
 
-    @SuppressWarnings("deprecation")
-    private void requestLocation() {
-        if (isStopping) return;
         try {
-            // Cancel any pending request before registering a new one
-            locationManager.removeUpdates(locationListener);
-            locationManager.requestSingleUpdate(
-                    LocationManager.GPS_PROVIDER,
-                    locationListener,
-                    Looper.getMainLooper()
-            );
-        } catch (SecurityException | IllegalArgumentException e) {
-            // GPS unavailable or permission revoked — stop the service
+            fusedClient.requestLocationUpdates(request, locationCallback, Looper.getMainLooper());
+        } catch (SecurityException e) {
             stopSelf();
-            return;
         }
-        // Schedule the next request regardless of whether this one gets a fix.
-        // If GPS is unavailable (indoors, airplane mode), the request times out silently
-        // and we try again at the next interval.
-        handler.postDelayed(this::requestLocation, intervalMillis);
+        return START_STICKY;
     }
 
     private void checkAutoStop(Location newLoc) {
@@ -108,7 +97,8 @@ public class LocationService extends Service {
                 }
             }
             // All 5 stored locations are within 100 m of the new location — user is stationary
-            isStopping = true;
+            prefs.setStopTime(System.currentTimeMillis());
+            prefs.setStopReason(Prefs.STOP_REASON_AUTO);
             stopSelf();
         }
     }
@@ -123,9 +113,7 @@ public class LocationService extends Service {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        isStopping = true;
-        locationManager.removeUpdates(locationListener);
-        handler.removeCallbacksAndMessages(null);
+        fusedClient.removeLocationUpdates(locationCallback);
         prefs.setRunning(false);
     }
 

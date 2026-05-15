@@ -1,16 +1,16 @@
-Timeline Tracks keeps your location history paths accurate even when you're in the outdoors: hiking, sailing, hang gliding, or anywhere your phone isn't near Wi-Fi access points.
+Timeline Tracks keeps your Google Timeline paths accurate even when you're in the outdoors: hiking, sailing, hang gliding, or anywhere your phone isn't near Wi-Fi access points. It can also help location-sharing and other background location apps in the same way.
 
-It works by requesting a GPS location at a regular interval (you choose how often). Every app on your phone that uses location, including Google Timeline, receives those fixes automatically. No special integration needed.
-
-I spent years as a software engineer on Google Timeline. I built this app for my own hiking and sailing. Others might find it useful too.
+It works by requesting a GPS location at a regular interval (you choose how often). A shorter interval is more accurate; a longer interval saves more battery. Every app on your phone that uses location, including Google Timeline, receives those locations automatically. No special integration needed.
 
 Simple by design:
-  - Set your interval (anywhere from seconds to hours)
-  - Tap Start — it runs in the background
-  - Tap Stop, or let it auto-stop when you're stationary
+  - Set your interval, from seconds to hours.
+  - Tap Start. It runs in the background.
+  - Tap Stop, or let it auto-stop when you're stationary.
 
-Privacy: No data is collected, stored, or transmitted. The app has no internet permission: it can't send your locations anywhere.
+Privacy: No data is collected, stored, or transmitted. The app does not have internet permission, so it can't send your locations anywhere.
 
-Free and open source (GPL-3.0). See https://github.com/randywilson/timeline-tracks.
+Free and open source at https://github.com/randywilson/timeline-tracks.
+
+I spent years as a software engineer on Google Timeline. I built this for myself; I hope you find it useful too.
 
 This app is an independent utility and is not affiliated with, endorsed by, or a product of Google LLC.
