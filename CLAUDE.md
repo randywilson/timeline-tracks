@@ -31,8 +31,8 @@ app/src/main/
 
 ## Architecture
 
-- **GPS loop**: `LocationManager.requestSingleUpdate` (deprecated API 30+ but functional) scheduled via `Handler.postDelayed`. Each call schedules the next one immediately — GPS timeout is handled silently, not as an error.
-- **Auto-stop**: rolling deque of 5 recent fixes; if the new fix is within 100 m of all 5, call `stopSelf()`.
+- **GPS loop**: `FusedLocationProviderClient.requestLocationUpdates` with `PRIORITY_HIGH_ACCURACY` and the user-set interval. Scheduling is managed by Google Play Services, which is exempt from Doze. `setWaitForAccurateLocation(false)` allows lower-accuracy fixes when GPS is degraded.
+- **Auto-stop**: rolling deque of 4 recent fixes; if the new fix is within 100 m of all 4 (5 total points), call `stopSelf()`.
 - **Notification**: `IMPORTANCE_DEFAULT`, channel ID `location_updates`. Stop action → `StopReceiver` → `stopService` + surface `MainActivity`.
 - **Permissions**: `ACCESS_FINE_LOCATION` + `ACCESS_BACKGROUND_LOCATION` (API 29+) required to start. `POST_NOTIFICATIONS` (API 33+) requested at Start tap, not at launch; denied → dialog explaining why it's needed, service does not start.
 - **Button colors**: green (`#2E7D32`) = Start, red (`#C62828`) = Stop, managed by `updateStartStopButton(boolean)`.
