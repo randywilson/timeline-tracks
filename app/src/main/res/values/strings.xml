@@ -43,7 +43,8 @@
         requesting GPS locations. Google Timeline (in the Google Maps app), and any other app on
         your phone, receives the locations for free.\n\nTimeline Tracks is 100% privacy-safe: it
         never stores your locations, runs entirely on your phone, and has no internet permission,
-        so it can\'t send your location data anywhere.</string>
+        so it can\'t send your location data anywhere.\n\nFor best results, make sure battery
+        optimization is set to \'Unrestricted\' for this app in Android Settings.</string>
 
     <!-- Notification -->
     <string name="notification_channel_name">Location Updates</string>

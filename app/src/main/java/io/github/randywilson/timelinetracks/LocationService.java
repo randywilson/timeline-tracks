@@ -12,6 +12,7 @@ import android.os.Build;
 import android.os.IBinder;
 import android.os.Looper;
 
+import androidx.annotation.VisibleForTesting;
 import androidx.core.app.NotificationCompat;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -21,8 +22,6 @@ import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.Priority;
 
-import java.util.ArrayDeque;
-
 public class LocationService extends Service {
 
     private static final int NOTIFICATION_ID = 1;
@@ -30,31 +29,43 @@ public class LocationService extends Service {
     private static final int MAX_RECENT = 4;
     private static final float AUTO_STOP_RADIUS_METERS = 100f;
 
+    /** Set in onCreate, cleared in onDestroy. Allows integration tests to call test methods. */
+    @VisibleForTesting
+    static volatile LocationService instance;
+
+    /** Injectable for tests; defaults to System clock. */
+    @VisibleForTesting
+    Clock clock = System::currentTimeMillis;
+
     private FusedLocationProviderClient fusedClient;
     private Prefs prefs;
     private boolean autoStop;
-    private ArrayDeque<Location> recentLocations;
+    private AutoStopChecker autoStopChecker;
 
     private final LocationCallback locationCallback = new LocationCallback() {
         @Override
         public void onLocationResult(LocationResult result) {
             Location location = result.getLastLocation();
             if (location == null) return;
-            // We intentionally do nothing with this location.
-            // The entire purpose of requesting it is the side effect:
-            // FusedLocationProviderClient feeds fixes directly into Google Play Services,
-            // so Google Timeline (and any other location-aware app) receives them for free.
-            prefs.incrementLocationCount();
-            if (autoStop) {
-                checkAutoStop(location);
-            }
-            addToRecent(location);
+            onLocationReceived(location);
         }
     };
+
+    private void onLocationReceived(Location location) {
+        // We intentionally do nothing with this location beyond counting it.
+        // The entire purpose of requesting it is the side effect:
+        // FusedLocationProviderClient feeds fixes directly into Google Play Services,
+        // so Google Timeline (and any other location-aware app) receives them for free.
+        prefs.incrementLocationCount();
+        if (autoStopChecker != null) {
+            autoStopChecker.onLocationReceived(location);
+        }
+    }
 
     @Override
     public void onCreate() {
         super.onCreate();
+        instance = this;
         createNotificationChannel();
         fusedClient = LocationServices.getFusedLocationProviderClient(this);
         prefs = new Prefs(this);
@@ -64,7 +75,15 @@ public class LocationService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         long intervalMillis = (long) prefs.getIntervalSeconds() * 1000;
         autoStop = prefs.getAutoStop();
-        recentLocations = new ArrayDeque<>();
+
+        autoStopChecker = autoStop
+                ? new AutoStopChecker(MAX_RECENT, AUTO_STOP_RADIUS_METERS, () -> {
+                    prefs.setStopTime(clock.currentTimeMillis());
+                    prefs.setStopReason(Prefs.STOP_REASON_AUTO);
+                    prefs.setRunning(false);
+                    stopSelf();
+                })
+                : null;
 
         prefs.setRunning(true);
 
@@ -89,30 +108,19 @@ public class LocationService extends Service {
         return START_STICKY;
     }
 
-    private void checkAutoStop(Location newLoc) {
-        if (recentLocations.size() == MAX_RECENT) {
-            for (Location recent : recentLocations) {
-                if (newLoc.distanceTo(recent) > AUTO_STOP_RADIUS_METERS) {
-                    return; // Not stationary yet
-                }
-            }
-            // All 5 stored locations are within 100 m of the new location — user is stationary
-            prefs.setStopTime(System.currentTimeMillis());
-            prefs.setStopReason(Prefs.STOP_REASON_AUTO);
-            stopSelf();
-        }
-    }
-
-    private void addToRecent(Location loc) {
-        recentLocations.addLast(loc);
-        if (recentLocations.size() > MAX_RECENT) {
-            recentLocations.removeFirst();
-        }
+    /**
+     * Directly triggers the location-received logic without going through FusedLocationProviderClient.
+     * For integration tests only.
+     */
+    @VisibleForTesting
+    void simulateLocationReceived(Location location) {
+        onLocationReceived(location);
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
+        instance = null;
         fusedClient.removeLocationUpdates(locationCallback);
         prefs.setRunning(false);
     }
