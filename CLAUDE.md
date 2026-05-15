@@ -29,6 +29,22 @@ app/src/main/
     mipmap-{mdpi,hdpi,xhdpi,xxhdpi,xxxhdpi}/ic_launcher.png legacy launcher icon
 ```
 
+## Tests
+
+```
+app/src/test/java/.../          ← unit tests (Robolectric, JVM)
+  AutoStopCheckerTest.java        auto-stop logic: deque, trigger point, moving/stationary scenarios
+  PrefsTest.java                  SharedPreferences round-trips
+
+app/src/androidTest/java/.../   ← instrumented tests (requires device/emulator)
+  LocationServiceIntegrationTest.java   full service lifecycle with autoStop on and off
+```
+
+**Run unit tests**: right-click `test` source set in Android Studio → Run Tests, or `:app:testDebugUnitTest`
+**Run integration test**: right-click `androidTest` source set → Run Tests, or `:app:connectedDebugAndroidTest`
+
+Note: do not set `includeAndroidResources = true` in `testOptions` — it breaks AAPT2 with PNG resources under AGP 8.x.
+
 ## Architecture
 
 - **GPS loop**: `FusedLocationProviderClient.requestLocationUpdates` with `PRIORITY_HIGH_ACCURACY` and the user-set interval. Scheduling is managed by Google Play Services, which is exempt from Doze. `setWaitForAccurateLocation(false)` allows lower-accuracy fixes when GPS is degraded.
