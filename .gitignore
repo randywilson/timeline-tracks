@@ -11,6 +11,9 @@ local.properties
 app/build/
 app/release/
 
+# Gradle wrapper jar (binary, generated locally — not checked in)
+gradle/wrapper/gradle-wrapper.jar
+
 # Fastlane
 fastlane/google-play-key.json
 fastlane/report.xml
