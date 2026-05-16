@@ -2,7 +2,8 @@
 <resources>
     <!-- Permission banner -->
     <string name="permission_warning">위치 권한(백그라운드 액세스 포함)이 필요합니다.
-        아래를 탭하여 설정을 열고 권한 → 위치 → 항상 허용을 선택하세요.</string>
+        아래를 탭하고 위치 → 항상 허용을 선택하세요.\n\n이 앱은 절대 위치를 저장하거나 수집하지
+        않습니다 — 인터넷 권한이 없으므로 어디에도 전송하는 것이 불가능합니다.</string>
     <string name="give_permission">권한 부여</string>
 
     <!-- Main UI -->

@@ -2,7 +2,9 @@
 <resources>
     <!-- Permission banner -->
     <string name="permission_warning">Se requiere permiso de ubicación (incluido el acceso en segundo plano).
-        Toca abajo para abrir Configuración, luego elige Permisos → Ubicación → Permitir siempre.</string>
+        Toca abajo, luego elige Ubicación → Permitir siempre.\n\nEsta app nunca almacena ni
+        recopila tu ubicación, y sin permiso de Internet sería imposible enviarla a ningún
+        lugar.</string>
     <string name="give_permission">Dar permiso</string>
 
     <!-- Main UI -->

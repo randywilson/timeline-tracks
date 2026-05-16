@@ -4,7 +4,9 @@
 
     <!-- Permission banner -->
     <string name="permission_warning">Location permission (including background access) is required.
-        Tap below to open Settings, then choose Permissions → Location → Allow all the time.</string>
+        Tap below, then choose Location → Allow all the time.\n\nThis app never stores or collects
+        your location — and with no internet permission, it couldn\'t send it anywhere even if it
+        tried.</string>
     <string name="give_permission">Give Permission</string>
 
     <!-- Main UI -->

@@ -2,7 +2,9 @@
 <resources>
     <!-- Permission banner -->
     <string name="permission_warning">位置情報の権限（バックグラウンドアクセスを含む）が必要です。
-        下のボタンをタップして設定を開き、権限 → 位置情報 → 常に許可 を選択してください。</string>
+        下のボタンをタップし、位置情報 → 常に許可 を選択してください。\n\nこのアプリは位置情報を
+        保存・収集することはありません。インターネット権限がないため、どこかに送信することも
+        不可能です。</string>
     <string name="give_permission">権限を付与</string>
 
     <!-- Main UI -->

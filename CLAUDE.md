@@ -45,6 +45,11 @@ app/src/androidTest/java/.../   ← instrumented tests (requires device/emulator
 
 Note: do not set `includeAndroidResources = true` in `testOptions` — it breaks AAPT2 with PNG resources under AGP 8.x.
 
+## Workflow rules
+
+- **Translations**: Whenever English strings (`res/values/strings.xml`) are changed, pause before committing, remind the user that translations need updating, update all translated `strings.xml` files under `res/values-*/` to reflect the changes, then proceed with the commit.
+- **Tests before push**: Always run all unit tests (`:app:testDebugUnitTest`) before pushing. Remind the user to run the instrumented tests (`:app:connectedDebugAndroidTest`) if service or permission logic changed.
+
 ## Architecture
 
 - **GPS loop**: `FusedLocationProviderClient.requestLocationUpdates` with `PRIORITY_HIGH_ACCURACY` and the user-set interval. Scheduling is managed by Google Play Services, which is exempt from Doze. `setWaitForAccurateLocation(false)` allows lower-accuracy fixes when GPS is degraded.
