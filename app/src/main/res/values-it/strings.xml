@@ -2,7 +2,7 @@
 <resources>
     <!-- Permission banner -->
     <string name="permission_warning">È richiesto il permesso di localizzazione (incluso l\'accesso
-        in background). Tocca qui sotto, quindi scegli Posizione → Consenti sempre.\n\nQuesta app
+        in background). Tocca qui sotto, quindi scegli Autorizzazioni → Posizione → Consenti sempre.\n\nQuesta app
         non memorizza né raccoglie mai la tua posizione — e senza il permesso Internet, non
         potrebbe inviarla da nessuna parte.</string>
     <string name="give_permission">Concedi permesso</string>

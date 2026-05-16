@@ -2,7 +2,7 @@
 <resources>
     <!-- Permission banner -->
     <string name="permission_warning">A permissão de localização (incluindo acesso em segundo plano) é necessária.
-        Toque abaixo, depois escolha Localização → Permitir sempre.\n\nEste app nunca armazena
+        Toque abaixo, depois escolha Permissões → Localização → Permitir sempre.\n\nEste app nunca armazena
         nem coleta sua localização — e sem permissão de Internet, seria impossível enviá-la
         para qualquer lugar.</string>
     <string name="give_permission">Dar permissão</string>

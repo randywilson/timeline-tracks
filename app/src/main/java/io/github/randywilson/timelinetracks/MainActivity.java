@@ -29,8 +29,6 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity {
 
     private static final int REQUEST_NOTIFICATIONS = 1;
-    private static final int REQUEST_FINE_LOCATION = 2;
-    private static final int REQUEST_BACKGROUND_LOCATION = 3;
 
     private boolean pendingStart = false;
 
@@ -128,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         // Always re-check permissions (user may have granted/revoked them in Settings)
         checkPermissions();
-        updateStatsView();
+        updateStatsView(prefs.isRunning());
         if (prefs.isRunning()) {
             statsHandler.postDelayed(statsTicker, 1000);
         }
@@ -167,29 +165,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openAppSettings() {
-        Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
-                Uri.fromParts("package", getPackageName(), null));
-        startActivity(intent);
+        // On API 29+, land directly on the app's permissions list (one tap from Location).
+        // Fall back to the full app settings page if the intent isn't supported.
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            try {
+                Intent intent = new Intent("android.intent.action.MANAGE_APP_PERMISSIONS");
+                intent.putExtra(Intent.EXTRA_PACKAGE_NAME, getPackageName());
+                startActivity(intent);
+                return;
+            } catch (Exception e) {
+                // fall through
+            }
+        }
+        startActivity(new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+                Uri.fromParts("package", getPackageName(), null)));
     }
 
     private void requestLocationPermissions() {
-        boolean hasFine = ContextCompat.checkSelfPermission(this,
-                Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED;
-
-        if (!hasFine) {
-            // Step 1: request fine location — shows a system dialog on all API levels.
-            ActivityCompat.requestPermissions(this,
-                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                    REQUEST_FINE_LOCATION);
-        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            // Step 2 (API 29+): request background location.
-            // On Android 11+ the OS cannot show a dialog for background location —
-            // it redirects the user directly to the location permission settings screen.
-            // On Android 10 a dialog with "Allow all the time" is shown instead.
-            ActivityCompat.requestPermissions(this,
-                    new String[]{Manifest.permission.ACCESS_BACKGROUND_LOCATION},
-                    REQUEST_BACKGROUND_LOCATION);
-        }
+        // Always open the app's permissions screen directly. The user taps
+        // Location → Allow all the time, which grants fine + background in one step.
+        // This avoids the clunky two-dialog flow that requestPermissions() produces.
+        openAppSettings();
     }
 
     private void requestBatteryOptimizationExemption() {
@@ -237,31 +233,6 @@ public class MainActivity extends AppCompatActivity {
                 }
                 break;
 
-            case REQUEST_FINE_LOCATION:
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    // Fine location granted — continue to request background if needed.
-                    requestLocationPermissions();
-                } else if (!ActivityCompat.shouldShowRequestPermissionRationale(
-                        this, Manifest.permission.ACCESS_FINE_LOCATION)) {
-                    // Permanently denied ("Don't ask again") — only app settings can unblock.
-                    openAppSettings();
-                }
-                checkPermissions();
-                break;
-
-            case REQUEST_BACKGROUND_LOCATION:
-                // On Android 11+: fires when user returns from the location settings screen.
-                // On Android 10: fires after the inline dialog.
-                // If permanently denied on Android 10, fall back to app settings.
-                if (grantResults.length > 0
-                        && grantResults[0] != PackageManager.PERMISSION_GRANTED
-                        && Build.VERSION.SDK_INT < Build.VERSION_CODES.R
-                        && !ActivityCompat.shouldShowRequestPermissionRationale(
-                                this, Manifest.permission.ACCESS_BACKGROUND_LOCATION)) {
-                    openAppSettings();
-                }
-                checkPermissions();
-                break;
         }
     }
 

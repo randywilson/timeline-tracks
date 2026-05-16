@@ -2,7 +2,7 @@
 <resources>
     <!-- Permission banner -->
     <string name="permission_warning">L\'autorisation de localisation (y compris l\'accès en arrière-plan)
-        est requise. Appuyez ci-dessous, puis choisissez Position → Toujours autoriser.\n\nCette
+        est requise. Appuyez ci-dessous, puis choisissez Autorisations → Position → Toujours autoriser.\n\nCette
         application ne stocke ni ne collecte jamais votre position — et sans autorisation Internet,
         il lui serait impossible de l\'envoyer où que ce soit.</string>
     <string name="give_permission">Accorder l\'autorisation</string>

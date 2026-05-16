@@ -2,7 +2,7 @@
 <resources>
     <!-- Permission banner -->
     <string name="permission_warning">Izin lokasi (termasuk akses latar belakang) diperlukan.
-        Ketuk di bawah, lalu pilih Lokasi → Izinkan setiap saat.\n\nAplikasi ini tidak pernah
+        Ketuk di bawah, lalu pilih Izin → Lokasi → Izinkan setiap saat.\n\nAplikasi ini tidak pernah
         menyimpan atau mengumpulkan lokasi Anda — dan tanpa izin Internet, tidak mungkin
         mengirimkannya ke mana pun.</string>
     <string name="give_permission">Berikan Izin</string>

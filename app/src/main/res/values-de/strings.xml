@@ -2,7 +2,7 @@
 <resources>
     <!-- Permission banner -->
     <string name="permission_warning">Standortberechtigung (einschließlich Hintergrundzugriff) ist erforderlich.
-        Tippe unten und wähle dann Standort → Immer zulassen.\n\nDiese App speichert oder erfasst
+        Tippe unten und wähle dann Berechtigungen → Standort → Immer zulassen.\n\nDiese App speichert oder erfasst
         deinen Standort nie – und ohne Internetberechtigung wäre es ihr unmöglich, ihn irgendwohin
         zu senden.</string>
     <string name="give_permission">Berechtigung erteilen</string>
