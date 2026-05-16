@@ -1,0 +1,17 @@
+default_platform(:android)
+
+platform :android do
+  desc "Upload store listings (metadata only, no APK/AAB)"
+  lane :upload_metadata do
+    upload_to_play_store(
+      track: "production",
+      metadata_path: "store",
+      skip_upload_apk: true,
+      skip_upload_aab: true,
+      skip_upload_metadata: false,
+      skip_upload_changelogs: true,
+      skip_upload_images: true,
+      skip_upload_screenshots: true
+    )
+  end
+end

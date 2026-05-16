@@ -10,3 +10,7 @@
 local.properties
 app/build/
 app/release/
+
+# Fastlane
+fastlane/google-play-key.json
+fastlane/report.xml
