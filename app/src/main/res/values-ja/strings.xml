@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Permission banner -->
+    <string name="permission_warning">位置情報の権限（バックグラウンドアクセスを含む）が必要です。
+        下のボタンをタップして設定を開き、権限 → 位置情報 → 常に許可 を選択してください。</string>
+    <string name="give_permission">権限を付与</string>
+
+    <!-- Main UI -->
+    <string name="interval_label">GPS測定の間隔（秒）</string>
+    <string name="auto_stop_label">停止中に自動停止</string>
+    <string name="about">このアプリについて</string>
+    <string name="about_title">Timeline Tracksについて</string>
+    <string name="about_message">このアプリはGoogle LLCとは無関係な独立したユーティリティです。\n\nなぜ作ったのか？
+        自分用に開発しましたが、他の人にも役立つかもしれません。</string>
+    <string name="how_it_works">仕組み</string>
+    <string name="start">開始</string>
+    <string name="stop">停止</string>
+    <string name="ok">OK</string>
+    <string name="cancel">キャンセル</string>
+    <string name="go_to_settings">設定へ</string>
+
+    <!-- Notification permission denied dialog -->
+    <string name="notification_permission_title">通知の権限が必要です</string>
+    <string name="notification_permission_message">Timeline Tracksは、実行中に通知を表示する権限が必要です。
+        権限がないと、追跡が有効かどうかを確認したり停止したりする方法がなく、
+        起動していることを忘れてしまうかもしれません。\n\n「設定へ」をタップして、
+        Timeline Tracksの通知を有効にしてください。</string>
+
+    <!-- Info popups -->
+    <string name="interval_info_message">間隔が短いほどTimelineのトラック品質が上がりますが、
+        バッテリーを多く使います。デフォルトの約2分未満は良いバランスです。</string>
+    <string name="auto_stop_info_message">5回連続した位置情報がすべて100メートル以内に収まっている場合、
+        アプリは静止していると判断して自動的に停止します。</string>
+
+    <!-- How It Works dialog -->
+    <string name="how_it_works_title">Timeline Tracksの仕組み</string>
+    <string name="how_it_works_message">ハイキング、ボート、またはWi-Fiアクセスポイントから離れた
+        その他のアクティビティを開始するときにTimeline Tracksを起動してください。\n\nTimeline Tracksは
+        バックグラウンドでGPS位置情報をリクエストし続けます。Google Timeline（Google Mapsアプリ内）など、
+        スマートフォン上のすべてのアプリが自動的にその位置情報を受け取ります。\n\nTimeline Tracksはプライバシーに
+        完全対応：位置情報を保存せず、スマートフォン上でのみ動作し、インターネット権限もないため、
+        データをどこにも送信できません。\n\nより良い結果のために、Androidの設定でこのアプリの
+        バッテリー最適化を「制限なし」に設定してください。</string>
+
+    <!-- Notification -->
+    <string name="notification_channel_name">位置情報の更新</string>
+    <string name="notification_channel_desc">GPS追跡中は常に通知を表示します</string>
+    <string name="notification_text">%d秒ごとにGPSを測定中</string>
+</resources>

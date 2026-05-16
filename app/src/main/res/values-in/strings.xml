@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Permission banner -->
+    <string name="permission_warning">Izin lokasi (termasuk akses latar belakang) diperlukan.
+        Ketuk di bawah untuk membuka Pengaturan, lalu pilih Izin → Lokasi → Izinkan setiap saat.</string>
+    <string name="give_permission">Berikan Izin</string>
+
+    <!-- Main UI -->
+    <string name="interval_label">Detik antara pembacaan GPS</string>
+    <string name="auto_stop_label">Berhenti otomatis saat diam</string>
+    <string name="about">Tentang</string>
+    <string name="about_title">Tentang Timeline Tracks</string>
+    <string name="about_message">Aplikasi ini adalah utilitas independen dan tidak berafiliasi
+        dengan, didukung oleh, atau merupakan produk dari Google LLC.\n\nMengapa? Saya membuatnya
+        untuk penggunaan pribadi, dan mungkin berguna bagi orang lain.</string>
+    <string name="how_it_works">Cara kerja</string>
+    <string name="start">Mulai</string>
+    <string name="stop">Berhenti</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Batal</string>
+    <string name="go_to_settings">Buka Pengaturan</string>
+
+    <!-- Notification permission denied dialog -->
+    <string name="notification_permission_title">Notifikasi Diperlukan</string>
+    <string name="notification_permission_message">Timeline Tracks membutuhkan izin untuk
+        menampilkan notifikasi saat berjalan. Tanpanya, tidak ada cara untuk melihat bahwa
+        pelacakan aktif atau menghentikannya — Anda mungkin lupa bahwa itu sedang berjalan.\n\nKetuk
+        Buka Pengaturan, lalu aktifkan Notifikasi untuk Timeline Tracks.</string>
+
+    <!-- Info popups -->
+    <string name="interval_info_message">Interval yang lebih pendek memberikan kualitas trek yang
+        lebih baik untuk Timeline; interval yang lebih panjang menghemat baterai. Default, sedikit
+        di bawah 2 menit, adalah kompromi yang baik.</string>
+    <string name="auto_stop_info_message">Jika 5 lokasi berurutan semuanya berada dalam 100 meter
+        satu sama lain, aplikasi menganggap Anda diam dan berhenti secara otomatis.</string>
+
+    <!-- How It Works dialog -->
+    <string name="how_it_works_title">Cara Kerja Timeline Tracks</string>
+    <string name="how_it_works_message">Mulai Timeline Tracks saat Anda memulai pendakian,
+        perjalanan perahu, atau aktivitas lain yang jauh dari titik akses Wi-Fi.\n\nTimeline Tracks
+        berjalan di latar belakang, meminta lokasi GPS. Google Timeline (di aplikasi Google Maps),
+        dan aplikasi lain di ponsel Anda, menerima lokasi secara otomatis.\n\nTimeline Tracks
+        100% aman untuk privasi: tidak pernah menyimpan lokasi Anda, berjalan sepenuhnya di
+        ponsel Anda, dan tidak memiliki izin internet, sehingga tidak dapat mengirim data lokasi
+        Anda ke mana pun.\n\nUntuk hasil terbaik, pastikan optimisasi baterai diatur ke
+        \'Tidak dibatasi\' untuk aplikasi ini di Pengaturan Android.</string>
+
+    <!-- Notification -->
+    <string name="notification_channel_name">Pembaruan Lokasi</string>
+    <string name="notification_channel_desc">Notifikasi persisten saat pelacakan GPS aktif</string>
+    <string name="notification_text">Membaca GPS setiap %d detik</string>
+</resources>

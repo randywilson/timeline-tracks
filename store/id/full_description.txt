@@ -1,0 +1,16 @@
+Timeline Tracks menjaga rute Google Timeline tetap akurat bahkan saat Anda berada di luar ruangan: hiking, berlayar, paralayang, atau di mana saja ponsel Anda tidak berada di dekat titik akses Wi-Fi. Ini juga dapat membantu aplikasi berbagi lokasi dan aplikasi lokasi latar belakang lainnya dengan cara yang sama.
+
+Cara kerjanya adalah dengan meminta lokasi GPS secara berkala (Anda memilih frekuensinya). Interval yang lebih pendek lebih akurat; interval yang lebih panjang menghemat lebih banyak baterai. Semua aplikasi di ponsel Anda yang menggunakan lokasi, termasuk Google Timeline, secara otomatis menerima lokasi ini. Tidak diperlukan integrasi khusus.
+
+Desain sederhana:
+  - Atur interval Anda, dari detik hingga jam.
+  - Ketuk Mulai. Berjalan di latar belakang.
+  - Ketuk Berhenti atau biarkan berhenti otomatis saat Anda diam.
+
+Privasi: Tidak ada data yang dikumpulkan, disimpan, atau dikirim. Aplikasi tidak memiliki izin internet, sehingga tidak dapat mengirim lokasi Anda ke mana pun.
+
+Gratis dan sumber terbuka di https://github.com/randywilson/timeline-tracks.
+
+Saya bekerja selama bertahun-tahun sebagai insinyur perangkat lunak di Google Timeline. Saya membuatnya untuk diri sendiri; semoga berguna juga untuk Anda.
+
+Aplikasi ini adalah utilitas independen dan tidak berafiliasi, didukung, atau diproduksi oleh Google LLC.

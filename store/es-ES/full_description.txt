@@ -1,0 +1,16 @@
+Timeline Tracks mantiene las rutas de Google Timeline precisas incluso cuando estás al aire libre: senderismo, navegación, ala delta, o en cualquier lugar donde tu teléfono no esté cerca de puntos de acceso Wi-Fi. También puede ayudar a las aplicaciones de compartición de ubicación y otras apps de ubicación en segundo plano de la misma manera.
+
+Funciona solicitando una ubicación GPS a un intervalo regular (tú eliges con qué frecuencia). Un intervalo más corto es más preciso; un intervalo más largo ahorra más batería. Todas las apps en tu teléfono que usan la ubicación, incluyendo Google Timeline, reciben esas ubicaciones automáticamente. No se necesita ninguna integración especial.
+
+Simple por diseño:
+  - Configura tu intervalo, de segundos a horas.
+  - Toca Iniciar. Se ejecuta en segundo plano.
+  - Toca Detener, o deja que se detenga automáticamente cuando estés estacionario.
+
+Privacidad: No se recopilan, almacenan ni transmiten datos. La aplicación no tiene permiso de internet, por lo que no puede enviar tu ubicación a ningún lugar.
+
+Gratuita y de código abierto en https://github.com/randywilson/timeline-tracks.
+
+Pasé años como ingeniero de software en Google Timeline. La desarrollé para uso propio; espero que también te sea útil.
+
+Esta aplicación es una utilidad independiente y no está afiliada, respaldada ni es un producto de Google LLC.

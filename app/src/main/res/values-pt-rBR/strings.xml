@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Permission banner -->
+    <string name="permission_warning">A permissão de localização (incluindo acesso em segundo plano) é necessária.
+        Toque abaixo para abrir as Configurações, depois escolha Permissões → Localização → Permitir sempre.</string>
+    <string name="give_permission">Dar permissão</string>
+
+    <!-- Main UI -->
+    <string name="interval_label">Segundos entre leituras de GPS</string>
+    <string name="auto_stop_label">Parar automaticamente quando parado</string>
+    <string name="about">Sobre</string>
+    <string name="about_title">Sobre o Timeline Tracks</string>
+    <string name="about_message">Este aplicativo é um utilitário independente e não é afiliado,
+        endossado ou produzido pelo Google LLC.\n\nPor quê? Desenvolvi para uso próprio
+        e outros podem achá-lo útil.</string>
+    <string name="how_it_works">Como funciona</string>
+    <string name="start">Iniciar</string>
+    <string name="stop">Parar</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancelar</string>
+    <string name="go_to_settings">Ir para Configurações</string>
+
+    <!-- Notification permission denied dialog -->
+    <string name="notification_permission_title">Notificação necessária</string>
+    <string name="notification_permission_message">O Timeline Tracks precisa de permissão para
+        mostrar uma notificação enquanto está em execução. Sem ela, não há como ver que o
+        rastreamento está ativo ou pará-lo — você pode esquecer que está ligado.\n\nToque em
+        Ir para Configurações e habilite as Notificações para o Timeline Tracks.</string>
+
+    <!-- Info popups -->
+    <string name="interval_info_message">Um intervalo menor dá ao Timeline trilhas de maior qualidade;
+        um intervalo maior economiza bateria. O padrão, pouco menos de 2 minutos, é um bom equilíbrio.</string>
+    <string name="auto_stop_info_message">Se 5 localizações consecutivas estiverem todas dentro de
+        100 metros entre si, o aplicativo assume que você está parado e para automaticamente.</string>
+
+    <!-- How It Works dialog -->
+    <string name="how_it_works_title">Como o Timeline Tracks funciona</string>
+    <string name="how_it_works_message">Inicie o Timeline Tracks quando começar uma caminhada,
+        passeio de barco ou outras atividades longe de pontos de acesso Wi-Fi.\n\nO Timeline Tracks
+        roda em segundo plano, solicitando localizações GPS. O Google Timeline (no aplicativo
+        Google Maps) e qualquer outro aplicativo no seu telefone recebe as localizações
+        automaticamente.\n\nO Timeline Tracks é 100% seguro para privacidade: nunca armazena suas
+        localizações, funciona inteiramente no seu telefone e não tem permissão de internet,
+        portanto não pode enviar seus dados de localização para lugar nenhum.\n\nPara melhores
+        resultados, certifique-se de que a otimização de bateria esteja definida como
+        \'Sem restrições\' para este aplicativo nas Configurações do Android.</string>
+
+    <!-- Notification -->
+    <string name="notification_channel_name">Atualizações de localização</string>
+    <string name="notification_channel_desc">Notificação persistente enquanto o rastreamento GPS está ativo</string>
+    <string name="notification_text">Lendo GPS a cada %d segundos</string>
+</resources>

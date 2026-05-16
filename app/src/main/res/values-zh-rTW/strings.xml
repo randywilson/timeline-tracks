@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Permission banner -->
+    <string name="permission_warning">需要位置權限（包括背景存取）。
+        點擊下方開啟設定，然後選擇權限 → 位置 → 一律允許。</string>
+    <string name="give_permission">授予權限</string>
+
+    <!-- Main UI -->
+    <string name="interval_label">GPS 讀取間隔（秒）</string>
+    <string name="auto_stop_label">靜止時自動停止</string>
+    <string name="about">關於</string>
+    <string name="about_title">關於 Timeline Tracks</string>
+    <string name="about_message">本應用程式是獨立的工具程式，與 Google LLC 無任何關聯，
+        亦未獲其認可或由其製作。\n\n為什麼？我為個人使用而開發，也許對其他人也有幫助。</string>
+    <string name="how_it_works">運作方式</string>
+    <string name="start">開始</string>
+    <string name="stop">停止</string>
+    <string name="ok">確定</string>
+    <string name="cancel">取消</string>
+    <string name="go_to_settings">前往設定</string>
+
+    <!-- Notification permission denied dialog -->
+    <string name="notification_permission_title">需要通知權限</string>
+    <string name="notification_permission_message">Timeline Tracks 需要在執行時顯示通知的權限。
+        沒有此權限，就無法查看追蹤是否啟用或將其停止——您可能會忘記它正在執行。\n\n點擊「前往設定」，
+        然後為 Timeline Tracks 啟用通知。</string>
+
+    <!-- Info popups -->
+    <string name="interval_info_message">較短的間隔能為 Timeline 提供更高品質的軌跡；
+        較長的間隔則能節省電池。預設值略低於 2 分鐘，是個不錯的折衷。</string>
+    <string name="auto_stop_info_message">如果連續 5 個位置都在彼此 100 公尺以內，
+        應用程式會判斷您處於靜止狀態並自動停止。</string>
+
+    <!-- How It Works dialog -->
+    <string name="how_it_works_title">Timeline Tracks 的運作方式</string>
+    <string name="how_it_works_message">當您開始健行、搭船或其他遠離 Wi-Fi 熱點的活動時，
+        請啟動 Timeline Tracks。\n\nTimeline Tracks 在背景執行，持續請求 GPS 位置。
+        Google Timeline（在 Google 地圖應用程式中）以及手機上的任何其他應用程式都會
+        自動接收這些位置。\n\nTimeline Tracks 完全保護隱私：它從不儲存您的位置，完全在
+        您的手機上執行，且沒有網際網路權限，因此無法將您的位置資料傳送到任何地方。\n\n為獲得
+        最佳結果，請在 Android 設定中將此應用程式的電池最佳化設為「不受限制」。</string>
+
+    <!-- Notification -->
+    <string name="notification_channel_name">位置更新</string>
+    <string name="notification_channel_desc">GPS 追蹤啟用時的持續通知</string>
+    <string name="notification_text">每 %d 秒讀取 GPS</string>
+</resources>

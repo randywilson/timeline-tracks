@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Permission banner -->
+    <string name="permission_warning">Standortberechtigung (einschließlich Hintergrundzugriff) ist erforderlich.
+        Tippe unten, um die Einstellungen zu öffnen, und wähle dann Berechtigungen → Standort → Immer zulassen.</string>
+    <string name="give_permission">Berechtigung erteilen</string>
+
+    <!-- Main UI -->
+    <string name="interval_label">Sekunden zwischen GPS-Messungen</string>
+    <string name="auto_stop_label">Automatisch stoppen wenn stationär</string>
+    <string name="about">Über</string>
+    <string name="about_title">Über Timeline Tracks</string>
+    <string name="about_message">Diese App ist ein unabhängiges Dienstprogramm und ist nicht mit
+        Google LLC verbunden, wird nicht von Google LLC unterstützt oder hergestellt.\n\nWarum?
+        Ich habe sie für den eigenen Gebrauch entwickelt, und andere könnten sie nützlich finden.</string>
+    <string name="how_it_works">So funktioniert es</string>
+    <string name="start">Starten</string>
+    <string name="stop">Stoppen</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="go_to_settings">Zu den Einstellungen</string>
+
+    <!-- Notification permission denied dialog -->
+    <string name="notification_permission_title">Benachrichtigung erforderlich</string>
+    <string name="notification_permission_message">Timeline Tracks benötigt die Berechtigung,
+        eine Benachrichtigung anzuzeigen, während es läuft. Ohne diese gibt es keine Möglichkeit
+        zu sehen, dass die Aufzeichnung aktiv ist oder sie zu stoppen — du könntest vergessen,
+        dass sie läuft.\n\nTippe auf Zu den Einstellungen und aktiviere dann Benachrichtigungen
+        für Timeline Tracks.</string>
+
+    <!-- Info popups -->
+    <string name="interval_info_message">Ein kürzeres Intervall liefert Timeline hochwertigere
+        Tracks; ein längeres Intervall spart Akku. Der Standardwert von knapp unter 2 Minuten
+        ist ein guter Kompromiss.</string>
+    <string name="auto_stop_info_message">Wenn 5 aufeinanderfolgende Standorte alle innerhalb
+        von 100 Metern voneinander liegen, geht die App davon aus, dass du stationär bist,
+        und stoppt automatisch.</string>
+
+    <!-- How It Works dialog -->
+    <string name="how_it_works_title">Wie Timeline Tracks funktioniert</string>
+    <string name="how_it_works_message">Starte Timeline Tracks, wenn du eine Wanderung, Bootsfahrt
+        oder andere Aktivitäten weit von WLAN-Zugangspunkten entfernt beginnst.\n\nTimeline Tracks
+        läuft im Hintergrund und fordert GPS-Standorte an. Google Timeline (in der Google Maps App)
+        und jede andere App auf deinem Telefon empfängt die Standorte automatisch.\n\nTimeline Tracks
+        ist 100 % datenschutzkonform: Es speichert niemals deine Standorte, läuft vollständig auf
+        deinem Telefon und hat keine Internetberechtigung, sodass es deine Standortdaten nirgendwohin
+        senden kann.\n\nFür beste Ergebnisse stelle sicher, dass die Akku-Optimierung für diese App
+        in den Android-Einstellungen auf „Nicht optimiert" gesetzt ist.</string>
+
+    <!-- Notification -->
+    <string name="notification_channel_name">Standortaktualisierungen</string>
+    <string name="notification_channel_desc">Dauerhafte Benachrichtigung während die GPS-Aufzeichnung aktiv ist</string>
+    <string name="notification_text">GPS-Messung alle %d Sekunden</string>
+</resources>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Permission banner -->
+    <string name="permission_warning">स्थान अनुमति (पृष्ठभूमि पहुँच सहित) आवश्यक है।
+        सेटिंग खोलने के लिए नीचे टैप करें, फिर अनुमतियाँ → स्थान → हमेशा अनुमति दें चुनें।</string>
+    <string name="give_permission">अनुमति दें</string>
+
+    <!-- Main UI -->
+    <string name="interval_label">GPS रीडिंग के बीच सेकंड</string>
+    <string name="auto_stop_label">रुकने पर स्वतः बंद करें</string>
+    <string name="about">के बारे में</string>
+    <string name="about_title">Timeline Tracks के बारे में</string>
+    <string name="about_message">यह ऐप एक स्वतंत्र उपयोगिता है और Google LLC से संबद्ध,
+        समर्थित या उसका उत्पाद नहीं है।\n\nक्यों? मैंने इसे अपने उपयोग के लिए बनाया,
+        और शायद दूसरों को भी यह उपयोगी लगे।</string>
+    <string name="how_it_works">यह कैसे काम करता है</string>
+    <string name="start">शुरू करें</string>
+    <string name="stop">रोकें</string>
+    <string name="ok">ठीक है</string>
+    <string name="cancel">रद्द करें</string>
+    <string name="go_to_settings">सेटिंग पर जाएँ</string>
+
+    <!-- Notification permission denied dialog -->
+    <string name="notification_permission_title">सूचना आवश्यक है</string>
+    <string name="notification_permission_message">Timeline Tracks को चलते समय सूचना दिखाने
+        की अनुमति चाहिए। इसके बिना, यह देखने का कोई तरीका नहीं है कि ट्रैकिंग सक्रिय है
+        या इसे रोका जाए — आप भूल सकते हैं कि यह चालू है।\n\nसेटिंग पर जाएँ टैप करें,
+        फिर Timeline Tracks के लिए सूचनाएँ सक्षम करें।</string>
+
+    <!-- Info popups -->
+    <string name="interval_info_message">छोटा अंतराल Timeline को उच्च-गुणवत्ता के ट्रैक देता है;
+        लंबा अंतराल बैटरी बचाता है। डिफ़ॉल्ट, 2 मिनट से थोड़ा कम, एक अच्छा समझौता है।</string>
+    <string name="auto_stop_info_message">यदि 5 लगातार स्थान एक-दूसरे से 100 मीटर के भीतर हैं,
+        तो ऐप मान लेता है कि आप रुके हुए हैं और स्वचालित रूप से बंद हो जाता है।</string>
+
+    <!-- How It Works dialog -->
+    <string name="how_it_works_title">Timeline Tracks कैसे काम करता है</string>
+    <string name="how_it_works_message">जब आप हाइकिंग, नाव की सवारी, या Wi-Fi एक्सेस पॉइंट
+        से दूर अन्य गतिविधियाँ शुरू करें तो Timeline Tracks शुरू करें।\n\nTimeline Tracks
+        पृष्ठभूमि में GPS स्थान अनुरोध करते हुए चलता है। Google Timeline (Google Maps ऐप में)
+        और आपके फोन पर कोई भी अन्य ऐप इन स्थानों को स्वचालित रूप से प्राप्त करता है।\n\nTimeline Tracks
+        100% गोपनीयता-सुरक्षित है: यह कभी आपके स्थान संग्रहीत नहीं करता, पूरी तरह आपके फोन
+        पर चलता है, और इसके पास इंटरनेट अनुमति नहीं है, इसलिए यह आपका स्थान डेटा कहीं नहीं
+        भेज सकता।\n\nसर्वोत्तम परिणामों के लिए, Android सेटिंग में इस ऐप के लिए बैटरी
+        अनुकूलन \'अप्रतिबंधित\' पर सेट करें।</string>
+
+    <!-- Notification -->
+    <string name="notification_channel_name">स्थान अपडेट</string>
+    <string name="notification_channel_desc">GPS ट्रैकिंग सक्रिय होने पर स्थायी सूचना</string>
+    <string name="notification_text">हर %d सेकंड में GPS पढ़ रहा है</string>
+</resources>
