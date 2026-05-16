@@ -19,8 +19,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.android.material.textfield.TextInputLayout;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -86,8 +84,8 @@ public class MainActivity extends AppCompatActivity {
         intervalField.setText(String.valueOf(prefs.getIntervalSeconds()));
         autoStopCheckbox.setChecked(prefs.getAutoStop());
 
-        TextInputLayout intervalLayout = findViewById(R.id.interval_layout);
-        intervalLayout.setEndIconOnClickListener(v ->
+        View intervalInfoButton = findViewById(R.id.interval_info_button);
+        intervalInfoButton.setOnClickListener(v ->
                 new AlertDialog.Builder(this)
                         .setMessage(R.string.interval_info_message)
                         .setPositiveButton(R.string.ok, null)

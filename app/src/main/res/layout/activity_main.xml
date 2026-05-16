@@ -72,7 +72,7 @@
                 tools:visibility="visible" />
 
             <!-- Single content card: settings + links + button -->
-            <com.google.android.material.card.MaterialCardView
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -86,29 +86,40 @@
                     android:orientation="vertical"
                     android:padding="20dp">
 
-                    <!-- Outlined interval field with floating label -->
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/interval_layout"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    <!-- Interval field with info button -->
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/interval_label"
-                        android:textColorHint="@color/near_black"
-                        app:hintTextColor="@color/near_black"
-                        app:boxStrokeColor="@color/near_black"
-                        app:endIconMode="custom"
-                        app:endIconDrawable="@drawable/ic_info"
-                        app:endIconContentDescription="@null">
+                        android:text="@string/interval_label"
+                        android:textColor="@color/near_black"
+                        android:textSize="12sp" />
 
-                        <com.google.android.material.textfield.TextInputEditText
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <EditText
                             android:id="@+id/interval_field"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:inputType="number"
                             android:maxLength="6"
                             tools:text="120" />
 
-                    </com.google.android.material.textfield.TextInputLayout>
+                        <ImageButton
+                            android:id="@+id/interval_info_button"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/ic_info"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:contentDescription="@null"
+                            android:padding="12dp" />
+
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -181,7 +192,7 @@
                             android:paddingStart="6dp"
                             android:paddingEnd="6dp"
                             android:text="·"
-                            android:textColor="?attr/colorPrimary" />
+                            android:textColor="@color/near_black" />
 
                         <TextView
                             android:id="@+id/how_it_works_link"
@@ -199,7 +210,7 @@
 
                 </LinearLayout>
 
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
 
         </LinearLayout>
     </ScrollView>

@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="Theme.TimelineTracks" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="Theme.TimelineTracks" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/near_black</item>
-        <item name="colorPrimaryVariant">@color/near_black</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <item name="colorSecondary">@color/near_black</item>
-        <item name="colorSecondaryVariant">@color/near_black</item>
-        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorPrimaryDark">@color/near_black</item>
+        <item name="colorAccent">@color/near_black</item>
         <item name="android:windowBackground">@color/ground_brown</item>
         <item name="android:statusBarColor" tools:targetApi="l">@color/sky_blue</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
