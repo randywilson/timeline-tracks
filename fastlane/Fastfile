@@ -16,9 +16,10 @@ platform :android do
   end
 
   desc "Upload release notes for the current version (changelogs only)"
-  lane :upload_changelogs do
+  lane :upload_changelogs do |options|
     upload_to_play_store(
-      track: "production",
+      track: options[:track] || "internal",
+      version_code: options[:version_code] || 4,
       metadata_path: "store",
       skip_upload_apk: true,
       skip_upload_aab: true,
