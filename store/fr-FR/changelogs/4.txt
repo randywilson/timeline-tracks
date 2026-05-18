@@ -1,0 +1,4 @@
+• Flux d'autorisation amélioré : « Accorder l'autorisation » ouvre désormais directement les paramètres de permission de l'app
+• Note de confidentialité ajoutée : l'app ne stocke ni ne transmet jamais votre position
+• Corrigé : ligne de statistiques absente au retour dans l'app via la notification
+• Corrigé : temps écoulé négatif lors de l'arrêt via la notification

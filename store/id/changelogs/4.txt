@@ -1,0 +1,4 @@
+• Alur izin ditingkatkan: "Berikan Izin" kini membuka pengaturan izin aplikasi secara langsung
+• Catatan privasi ditambahkan: aplikasi tidak pernah menyimpan atau mengirimkan lokasi Anda
+• Diperbaiki: baris statistik tidak muncul saat kembali ke aplikasi melalui notifikasi
+• Diperbaiki: waktu berjalan negatif saat berhenti melalui notifikasi

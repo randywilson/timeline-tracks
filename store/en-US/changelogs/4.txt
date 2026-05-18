@@ -1,0 +1,4 @@
+• Improved permission flow: "Give Permission" now opens your app's permission settings directly — no more confusing two-step dialog
+• Added privacy note explaining the app never stores or transmits your location
+• Fixed: stats line missing after returning to the app via the notification
+• Fixed: negative elapsed time shown after stopping via the notification Stop button

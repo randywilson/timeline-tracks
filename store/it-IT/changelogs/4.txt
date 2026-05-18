@@ -1,0 +1,4 @@
+• Flusso autorizzazione migliorato: "Concedi permesso" ora apre direttamente le impostazioni dei permessi dell'app
+• Nota sulla privacy aggiunta: l'app non memorizza né trasmette mai la tua posizione
+• Risolto: riga statistiche mancante al ritorno nell'app tramite notifica
+• Risolto: tempo trascorso negativo quando si ferma tramite notifica

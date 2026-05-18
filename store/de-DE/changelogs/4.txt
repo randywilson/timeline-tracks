@@ -1,0 +1,4 @@
+• Verbesserte Berechtigungsführung: „Berechtigung erteilen" öffnet jetzt direkt die Berechtigungseinstellungen der App
+• Datenschutzhinweis im Berechtigungsbanner hinzugefügt: Die App speichert oder sendet deinen Standort niemals
+• Behoben: Statistikzeile fehlte nach Rückkehr zur App über die Benachrichtigung
+• Behoben: Negative Laufzeit nach dem Stoppen über die Benachrichtigung

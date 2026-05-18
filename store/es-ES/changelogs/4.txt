@@ -1,0 +1,4 @@
+• Flujo de permisos mejorado: "Dar permiso" ahora abre directamente los ajustes de permisos de la app
+• Nota de privacidad añadida: la app nunca almacena ni transmite tu ubicación
+• Corregido: línea de estadísticas ausente al volver a la app desde la notificación
+• Corregido: tiempo transcurrido negativo al detener desde la notificación
