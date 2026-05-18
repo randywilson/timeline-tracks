@@ -122,6 +122,12 @@ public class LocationService extends Service {
         super.onDestroy();
         instance = null;
         fusedClient.removeLocationUpdates(locationCallback);
+        // If stopTime wasn't set before this call (e.g. stopped via notification rather
+        // than the in-app button or auto-stop), record it now to avoid a stale value.
+        if (prefs.getStopTime() < prefs.getStartTime()) {
+            prefs.setStopTime(clock.currentTimeMillis());
+            prefs.setStopReason(Prefs.STOP_REASON_USER);
+        }
         prefs.setRunning(false);
     }
 
