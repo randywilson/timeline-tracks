@@ -47,6 +47,33 @@ app/src/androidTest/java/.../   ← instrumented tests (requires device/emulator
 
 Note: do not set `includeAndroidResources = true` in `testOptions` — it breaks AAPT2 with PNG resources under AGP 8.x.
 
+## Fastlane
+
+Automates Play Store uploads. Installed via Homebrew (`brew install fastlane`).
+
+- `fastlane/Appfile` — package name + service account key path
+- `fastlane/Fastfile` — two lanes:
+  - `upload_metadata` — pushes store listings (title, descriptions) to production; reads from `store/<locale>/`
+  - `upload_changelogs track:<track> version_code:<N>` — pushes release notes only; defaults to internal track, versionCode 4
+- Service account key: `fastlane/google-play-key.json` (gitignored — never commit)
+  - Also readable from `SUPPLY_JSON_KEY` env var
+  - Get key: Play Console → Setup → API access → Create service account → grant "Release manager"
+
+### Store metadata layout
+
+```
+store/
+  <locale>/            e.g. en-US, de-DE, fr-FR, es-ES, pt-BR, ja-JP, ko-KR, zh-TW, hi-IN, it-IT, id
+    title.txt
+    short_description.txt
+    full_description.txt
+    changelogs/<versionCode>.txt
+  ic_launcher_512.png  512×512 Play Store icon
+  feature_graphic.png  1024×500 feature graphic
+```
+
+When bumping the version, add a new `changelogs/<versionCode>.txt` in every locale directory and upload with `fastlane upload_changelogs version_code:<N>`.
+
 ## Workflow rules
 
 - **Translations**: Whenever English strings (`res/values/strings.xml`) are changed, pause before committing, remind the user that translations need updating, update all translated `strings.xml` files under `res/values-*/` to reflect the changes, then proceed with the commit.
