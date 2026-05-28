@@ -168,7 +168,7 @@ public class LocationService extends Service {
         return new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setContentTitle(getString(R.string.app_name))
                 .setContentText(getString(R.string.notification_text, intervalSeconds))
-                .setSmallIcon(R.drawable.ic_notification)
+                .setSmallIcon(R.drawable.ic_title)
                 .setContentIntent(contentPendingIntent)
                 .setOngoing(true)
                 .addAction(0, getString(R.string.stop), stopPendingIntent)
