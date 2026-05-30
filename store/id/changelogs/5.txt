@@ -1,1 +1,2 @@
 • Ikon notifikasi diperbarui dengan desain pin dengan titik-titik
+• Kualitas lokasi GPS ditingkatkan untuk pelacakan yang lebih andal

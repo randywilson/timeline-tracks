@@ -1,1 +1,2 @@
 • Updated notification tray icon to show the pin-with-dots design
+• Improved GPS location quality for more reliable tracking

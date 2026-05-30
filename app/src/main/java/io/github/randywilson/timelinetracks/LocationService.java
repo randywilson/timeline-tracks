@@ -39,7 +39,6 @@ public class LocationService extends Service {
 
     private FusedLocationProviderClient fusedClient;
     private Prefs prefs;
-    private boolean autoStop;
     private AutoStopChecker autoStopChecker;
 
     private final LocationCallback locationCallback = new LocationCallback() {
@@ -74,9 +73,8 @@ public class LocationService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         long intervalMillis = (long) prefs.getIntervalSeconds() * 1000;
-        autoStop = prefs.getAutoStop();
 
-        autoStopChecker = autoStop
+        autoStopChecker = prefs.getAutoStop()
                 ? new AutoStopChecker(MAX_RECENT, AUTO_STOP_RADIUS_METERS, () -> {
                     prefs.setStopTime(clock.currentTimeMillis());
                     prefs.setStopReason(Prefs.STOP_REASON_AUTO);
@@ -97,7 +95,7 @@ public class LocationService extends Service {
 
         LocationRequest request = new LocationRequest.Builder(Priority.PRIORITY_HIGH_ACCURACY, intervalMillis)
                 .setMinUpdateIntervalMillis(intervalMillis)
-                .setWaitForAccurateLocation(false)
+                .setWaitForAccurateLocation(true)
                 .build();
 
         try {

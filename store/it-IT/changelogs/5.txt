@@ -1,1 +1,2 @@
 • Icona notifica aggiornata con il design puntaspillo con punti
+• Qualità della posizione GPS migliorata per un tracciamento più affidabile

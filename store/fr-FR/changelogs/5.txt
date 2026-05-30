@@ -1,1 +1,2 @@
 • Icône de notification mise à jour avec le design épingle avec points
+• Qualité de localisation GPS améliorée pour un suivi plus fiable

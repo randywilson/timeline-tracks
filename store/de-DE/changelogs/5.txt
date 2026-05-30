@@ -1,1 +1,2 @@
 • Benachrichtigungssymbol zeigt jetzt das Pin-mit-Punkten-Design
+• GPS-Standortqualität für zuverlässigeres Tracking verbessert

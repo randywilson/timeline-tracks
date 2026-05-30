@@ -1,1 +1,2 @@
 • Icono de notificación actualizado con el diseño de pin con puntos
+• Calidad de ubicación GPS mejorada para un seguimiento más fiable
