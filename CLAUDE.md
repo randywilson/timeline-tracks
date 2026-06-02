@@ -81,7 +81,7 @@ When bumping the version, add a new `changelogs/<versionCode>.txt` in every loca
 
 ## Architecture
 
-- **GPS loop**: `FusedLocationProviderClient.requestLocationUpdates` with `PRIORITY_HIGH_ACCURACY` and the user-set interval. Scheduling is managed by Google Play Services, which is exempt from Doze. `setWaitForAccurateLocation(false)` allows lower-accuracy fixes when GPS is degraded.
+- **GPS loop**: `LocationManager.requestLocationUpdates(GPS_PROVIDER, intervalMs, 0f, listener)` — uses the raw GPS hardware provider directly, guaranteeing GPS-quality fixes with no WiFi/cell fallback. GPS fixes produced by the hardware flow through the platform location stack into FLP's internal cache, so FLP-based apps (e.g. Google Timeline) receive them automatically. `minDistanceMeters = 0` means no distance threshold. The foreground service is Doze-exempt; going through `GPS_PROVIDER` rather than FLP avoids FLP's internal batching/throttling that slows background delivery.
 - **Auto-stop**: rolling deque of 4 recent fixes; if the new fix is within 100 m of all 4 (5 total points), call `stopSelf()`.
 - **Notification**: `IMPORTANCE_DEFAULT`, channel ID `location_updates`. Stop action → `StopReceiver` → `stopService` + surface `MainActivity`.
 - **Permissions**: `ACCESS_FINE_LOCATION` + `ACCESS_BACKGROUND_LOCATION` (API 29+) required to start. `POST_NOTIFICATIONS` (API 33+) requested at Start tap, not at launch; denied → dialog explaining why it's needed, service does not start.

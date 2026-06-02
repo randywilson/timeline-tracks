@@ -1,0 +1,2 @@
+• Le posizioni GPS utilizzano ora esclusivamente il GPS hardware — nessun fallback a WiFi o rete mobile
+• Frequenza delle posizioni più costante con lo schermo spento o un'altra app attiva

@@ -1,0 +1,2 @@
+• Les positions GPS utilisent désormais uniquement le GPS matériel — sans recours au WiFi ou au réseau mobile
+• Fréquence de localisation plus régulière lorsque l'écran est éteint ou qu'une autre app est active

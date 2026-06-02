@@ -1,0 +1,2 @@
+• Las localizaciones GPS usan ahora exclusivamente el hardware GPS — sin recurso a WiFi o red móvil
+• Frecuencia de localización más consistente con la pantalla apagada o en segundo plano

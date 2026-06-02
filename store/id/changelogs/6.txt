@@ -1,0 +1,2 @@
+• Fix GPS kini menggunakan GPS hardware saja — tanpa fallback ke WiFi atau jaringan seluler
+• Frekuensi fix lebih konsisten saat layar mati atau aplikasi lain aktif

@@ -1,0 +1,2 @@
+• GPS-Fixes verwenden jetzt ausschließlich Hardware-GPS — kein WLAN- oder Mobilnetz-Fallback
+• Gleichmäßigere Fix-Frequenz, wenn der Bildschirm aus ist oder eine andere App aktiv ist

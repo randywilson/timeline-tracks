@@ -8,19 +8,15 @@ import android.app.Service;
 import android.content.Intent;
 import android.content.pm.ServiceInfo;
 import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Build;
+import android.os.Bundle;
 import android.os.IBinder;
 import android.os.Looper;
 
 import androidx.annotation.VisibleForTesting;
 import androidx.core.app.NotificationCompat;
-
-import com.google.android.gms.location.FusedLocationProviderClient;
-import com.google.android.gms.location.LocationCallback;
-import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.location.LocationResult;
-import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.location.Priority;
 
 public class LocationService extends Service {
 
@@ -37,23 +33,30 @@ public class LocationService extends Service {
     @VisibleForTesting
     Clock clock = System::currentTimeMillis;
 
-    private FusedLocationProviderClient fusedClient;
+    private LocationManager locationManager;
     private Prefs prefs;
     private AutoStopChecker autoStopChecker;
 
-    private final LocationCallback locationCallback = new LocationCallback() {
+    private final LocationListener locationListener = new LocationListener() {
         @Override
-        public void onLocationResult(LocationResult result) {
-            Location location = result.getLastLocation();
-            if (location == null) return;
+        public void onLocationChanged(Location location) {
             onLocationReceived(location);
         }
+
+        @Override
+        public void onStatusChanged(String provider, int status, Bundle extras) {}
+
+        @Override
+        public void onProviderEnabled(String provider) {}
+
+        @Override
+        public void onProviderDisabled(String provider) {}
     };
 
     private void onLocationReceived(Location location) {
         // We intentionally do nothing with this location beyond counting it.
-        // The entire purpose of requesting it is the side effect:
-        // FusedLocationProviderClient feeds fixes directly into Google Play Services,
+        // The entire purpose of requesting it is the side effect: GPS fixes produced by
+        // the hardware flow through the platform location stack into FLP's internal cache,
         // so Google Timeline (and any other location-aware app) receives them for free.
         prefs.incrementLocationCount();
         if (autoStopChecker != null) {
@@ -66,7 +69,7 @@ public class LocationService extends Service {
         super.onCreate();
         instance = this;
         createNotificationChannel();
-        fusedClient = LocationServices.getFusedLocationProviderClient(this);
+        locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         prefs = new Prefs(this);
     }
 
@@ -93,13 +96,17 @@ public class LocationService extends Service {
             startForeground(NOTIFICATION_ID, notification);
         }
 
-        LocationRequest request = new LocationRequest.Builder(Priority.PRIORITY_HIGH_ACCURACY, intervalMillis)
-                .setMinUpdateIntervalMillis(intervalMillis)
-                .setWaitForAccurateLocation(true)
-                .build();
-
         try {
-            fusedClient.requestLocationUpdates(request, locationCallback, Looper.getMainLooper());
+            // GPS_PROVIDER guarantees hardware GPS fixes only — no WiFi/cell fallback.
+            // GPS fixes propagate through the platform location stack so FLP-based apps
+            // (e.g. Google Timeline) receive them automatically. Bypasses FLP's internal
+            // batching/throttling, which can slow deliveries when the screen is off.
+            locationManager.requestLocationUpdates(
+                    LocationManager.GPS_PROVIDER,
+                    intervalMillis,
+                    0f,
+                    locationListener,
+                    Looper.getMainLooper());
         } catch (SecurityException e) {
             stopSelf();
         }
@@ -107,7 +114,7 @@ public class LocationService extends Service {
     }
 
     /**
-     * Directly triggers the location-received logic without going through FusedLocationProviderClient.
+     * Directly triggers the location-received logic without going through LocationManager.
      * For integration tests only.
      */
     @VisibleForTesting
@@ -119,7 +126,7 @@ public class LocationService extends Service {
     public void onDestroy() {
         super.onDestroy();
         instance = null;
-        fusedClient.removeLocationUpdates(locationCallback);
+        locationManager.removeUpdates(locationListener);
         // If stopTime wasn't set before this call (e.g. stopped via notification rather
         // than the in-app button or auto-stop), record it now to avoid a stale value.
         if (prefs.getStopTime() < prefs.getStartTime()) {

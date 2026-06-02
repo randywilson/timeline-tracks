@@ -1,0 +1,2 @@
+• GPS fixes now use hardware GPS only — no WiFi or cell network fallback
+• More consistent fix frequency when the screen is off or another app is active
