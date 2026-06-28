@@ -84,11 +84,11 @@ final class PrefsTests: XCTestCase {
         XCTAssertNil(Prefs.startTime)
     }
 
-    func testStartTimeRoundTrip() {
+    func testStartTimeRoundTrip() throws {
         let date = Date(timeIntervalSince1970: 1_700_000_000)
         Prefs.startTime = date
         XCTAssertEqual(
-            Prefs.startTime?.timeIntervalSince1970,
+            try XCTUnwrap(Prefs.startTime).timeIntervalSince1970,
             date.timeIntervalSince1970,
             accuracy: 0.001
         )
@@ -106,11 +106,11 @@ final class PrefsTests: XCTestCase {
         XCTAssertNil(Prefs.stopTime)
     }
 
-    func testStopTimeRoundTrip() {
+    func testStopTimeRoundTrip() throws {
         let date = Date(timeIntervalSince1970: 1_700_001_000)
         Prefs.stopTime = date
         XCTAssertEqual(
-            Prefs.stopTime?.timeIntervalSince1970,
+            try XCTUnwrap(Prefs.stopTime).timeIntervalSince1970,
             date.timeIntervalSince1970,
             accuracy: 0.001
         )

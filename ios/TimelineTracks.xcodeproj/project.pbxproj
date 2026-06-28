@@ -12,6 +12,7 @@
 		94BE67AF91A757094B080162 /* TimelineTracksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4367C62BAAD71EDF2899B71 /* TimelineTracksApp.swift */; };
 		A42C41D18F3529082D45828F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCB4CC3FACBF445255563F49 /* Assets.xcassets */; };
 		B113046A79CC06E31B15D462 /* LocationTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F612E31734CDE447ADDC6585 /* LocationTracker.swift */; };
+		C35AF242B766024329DA7CC1 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65970FB79ABC63E783506B8E /* Models.swift */; };
 		D0FF5E36DBDEC2AF4F77A0FC /* PrefsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3407E61FB5D990D72199AF5 /* PrefsTests.swift */; };
 		EA55B92EC29884FC010503B2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062DB0F932639273864C4D14 /* ContentView.swift */; };
 		FA11AE09D8C46F260F5670D6 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D3C4587295FDF031B5E44D /* Colors.swift */; };
@@ -31,13 +32,14 @@
 
 /* Begin PBXFileReference section */
 		062DB0F932639273864C4D14 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		12EE863600653172FD6A34A2 /* TimelineTracksTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = TimelineTracksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		12EE863600653172FD6A34A2 /* TimelineTracksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimelineTracksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14C777FA51793B918699B55A /* AutoStopCheckerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoStopCheckerTests.swift; sourceTree = "<group>"; };
 		46D3C4587295FDF031B5E44D /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		47986BB2BA3F76D96D662865 /* AutoStopChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoStopChecker.swift; sourceTree = "<group>"; };
 		4E934DA4E4D6F959613F506B /* Prefs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prefs.swift; sourceTree = "<group>"; };
-		6EA9529700D87035A8BF2CC3 /* TimelineTracks.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = TimelineTracks.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB36C4A65B08931A46598DAE /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		65970FB79ABC63E783506B8E /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		6EA9529700D87035A8BF2CC3 /* TimelineTracks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimelineTracks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB36C4A65B08931A46598DAE /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		BCB4CC3FACBF445255563F49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3407E61FB5D990D72199AF5 /* PrefsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsTests.swift; sourceTree = "<group>"; };
 		C4367C62BAAD71EDF2899B71 /* TimelineTracksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineTracksApp.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				46D3C4587295FDF031B5E44D /* Colors.swift */,
 				062DB0F932639273864C4D14 /* ContentView.swift */,
 				F612E31734CDE447ADDC6585 /* LocationTracker.swift */,
+				65970FB79ABC63E783506B8E /* Models.swift */,
 				4E934DA4E4D6F959613F506B /* Prefs.swift */,
 				AB36C4A65B08931A46598DAE /* PrivacyInfo.xcprivacy */,
 				C4367C62BAAD71EDF2899B71 /* TimelineTracksApp.swift */,
@@ -133,7 +136,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 2660;
 				TargetAttributes = {
 					D2DD49061C5794C50C713A94 = {
 						DevelopmentTeam = "";
@@ -191,6 +194,7 @@
 				FA11AE09D8C46F260F5670D6 /* Colors.swift in Sources */,
 				EA55B92EC29884FC010503B2 /* ContentView.swift in Sources */,
 				B113046A79CC06E31B15D462 /* LocationTracker.swift in Sources */,
+				C35AF242B766024329DA7CC1 /* Models.swift in Sources */,
 				52F855CD9F0D6D08ED9D0DC0 /* Prefs.swift in Sources */,
 				94BE67AF91A757094B080162 /* TimelineTracksApp.swift in Sources */,
 			);
@@ -221,6 +225,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.randywilson.timelinetracks;
+				PRODUCT_NAME = TimelineTracks;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -240,6 +245,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.randywilson.timelinetracks;
+				PRODUCT_NAME = TimelineTracks;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -283,6 +289,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -295,8 +302,9 @@
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "Timeline Tracks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.9;
@@ -307,6 +315,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -314,7 +323,8 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.randywilson.timelinetracksTests;
-				SDKROOT = iphoneos;
+				SDKROOT = iphonesimulator;
+				SUPPORTED_PLATFORMS = iphonesimulator;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TimelineTracks.app/TimelineTracks";
 			};
@@ -358,6 +368,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -377,8 +388,9 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "Timeline Tracks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.9;
@@ -389,6 +401,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -396,7 +409,8 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.randywilson.timelinetracksTests;
-				SDKROOT = iphoneos;
+				SDKROOT = iphonesimulator;
+				SUPPORTED_PLATFORMS = iphonesimulator;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TimelineTracks.app/TimelineTracks";
 			};

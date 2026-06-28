@@ -10,7 +10,6 @@ options:
 
 settings:
   base:
-    PRODUCT_NAME: "Timeline Tracks"
     SWIFT_VERSION: "5.9"
     MARKETING_VERSION: "1.0"
     CURRENT_PROJECT_VERSION: "1"
@@ -27,6 +26,7 @@ targets:
           - "Info.plist"   # referenced via INFOPLIST_FILE, not compiled
     settings:
       base:
+        PRODUCT_NAME: TimelineTracks
         PRODUCT_BUNDLE_IDENTIFIER: io.github.randywilson.timelinetracks
         INFOPLIST_FILE: TimelineTracks/Info.plist
         CODE_SIGN_STYLE: Automatic
@@ -37,12 +37,17 @@ targets:
     platform: iOS
     deploymentTarget: "17.0"
     sources:
-      - TimelineTracksTests
+      - path: TimelineTracksTests
     dependencies:
       - target: TimelineTracks
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: io.github.randywilson.timelinetracksTests
+        SDKROOT: iphonesimulator
+        SUPPORTED_PLATFORMS: iphonesimulator
+        GENERATE_INFOPLIST_FILE: YES
+        BUNDLE_LOADER: "$(TEST_HOST)"
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/TimelineTracks.app/TimelineTracks"
 
 schemes:
   TimelineTracks:
