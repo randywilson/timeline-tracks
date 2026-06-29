@@ -92,11 +92,12 @@ final class AutoStopCheckerTests: XCTestCase {
         for _ in 0..<4 {
             _ = checker.check(loc(0, 0))
         }
-        _ = checker.check(loc(0.002, 0))  // distant fix now in window
-        _ = checker.check(loc(0, 0))      // distant fix still in window (3rd slot)
-        _ = checker.check(loc(0, 0))      // distant fix still in window (2nd slot)
-        _ = checker.check(loc(0, 0))      // distant fix slides out; window is all stationary again
-        XCTAssertTrue(checker.check(loc(0, 0)))  // 5th stationary since distant fix left
+        _ = checker.check(loc(0.002, 0))  // distant fix enters window (position 3)
+        _ = checker.check(loc(0, 0))      // distant fix slides to position 2
+        _ = checker.check(loc(0, 0))      // distant fix slides to position 1
+        _ = checker.check(loc(0, 0))      // distant fix slides to position 0
+        _ = checker.check(loc(0, 0))      // distant fix removed, but allSatisfy was checked against it — returns false
+        XCTAssertTrue(checker.check(loc(0, 0)))  // window now all stationary — triggers
     }
 
     // MARK: - Reset
