@@ -1,0 +1,1 @@
+• Ora memorizza tre intervalli di campionamento per cambiare rapidamente in base all'attività.

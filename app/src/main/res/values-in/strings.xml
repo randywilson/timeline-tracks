@@ -8,7 +8,9 @@
     <string name="give_permission">Berikan Izin</string>
 
     <!-- Main UI -->
-    <string name="interval_label">Detik antara pembacaan GPS</string>
+    <string name="interval_label">Interval pengambilan sampel GPS</string>
+    <string name="min_label">mnt</string>
+    <string name="sec_label">dtk</string>
     <string name="auto_stop_label">Berhenti otomatis saat diam</string>
     <string name="about">Tentang</string>
     <string name="about_title">Tentang Timeline Tracks</string>
@@ -31,8 +33,7 @@
 
     <!-- Info popups -->
     <string name="interval_info_message">Interval yang lebih pendek memberikan kualitas trek yang
-        lebih baik untuk Timeline; interval yang lebih panjang menghemat baterai. Default, sedikit
-        di bawah 2 menit, adalah kompromi yang baik.</string>
+        lebih baik untuk Timeline; interval yang lebih panjang menghemat baterai. Sedikit di bawah 2 menit adalah kompromi yang baik.</string>
     <string name="auto_stop_info_message">Jika 5 lokasi berurutan semuanya berada dalam 100 meter
         satu sama lain, aplikasi menganggap Anda diam dan berhenti secara otomatis.</string>
 
@@ -50,5 +51,5 @@
     <!-- Notification -->
     <string name="notification_channel_name">Pembaruan Lokasi</string>
     <string name="notification_channel_desc">Notifikasi persisten saat pelacakan GPS aktif</string>
-    <string name="notification_text">Membaca GPS setiap %d detik</string>
+    <string name="notification_text">Membaca GPS setiap %s</string>
 </resources>

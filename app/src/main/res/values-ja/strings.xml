@@ -8,7 +8,9 @@
     <string name="give_permission">権限を付与</string>
 
     <!-- Main UI -->
-    <string name="interval_label">GPS測定の間隔（秒）</string>
+    <string name="interval_label">GPSサンプリング間隔</string>
+    <string name="min_label">分</string>
+    <string name="sec_label">秒</string>
     <string name="auto_stop_label">停止中に自動停止</string>
     <string name="about">このアプリについて</string>
     <string name="about_title">Timeline Tracksについて</string>
@@ -30,7 +32,7 @@
 
     <!-- Info popups -->
     <string name="interval_info_message">間隔が短いほどTimelineのトラック品質が上がりますが、
-        バッテリーを多く使います。デフォルトの約2分未満は良いバランスです。</string>
+        バッテリーを多く使います。約2分未満は良いバランスです。</string>
     <string name="auto_stop_info_message">5回連続した位置情報がすべて100メートル以内に収まっている場合、
         アプリは静止していると判断して自動的に停止します。</string>
 
@@ -47,5 +49,5 @@
     <!-- Notification -->
     <string name="notification_channel_name">位置情報の更新</string>
     <string name="notification_channel_desc">GPS追跡中は常に通知を表示します</string>
-    <string name="notification_text">%d秒ごとにGPSを測定中</string>
+    <string name="notification_text">%sごとにGPSを測定中</string>
 </resources>

@@ -1,0 +1,1 @@
+• Enregistre désormais trois intervalles d'échantillonnage pour changer rapidement selon l'activité.

@@ -7,7 +7,9 @@
     <string name="give_permission">अनुमति दें</string>
 
     <!-- Main UI -->
-    <string name="interval_label">GPS रीडिंग के बीच सेकंड</string>
+    <string name="interval_label">GPS नमूना अंतराल</string>
+    <string name="min_label">मि</string>
+    <string name="sec_label">से</string>
     <string name="auto_stop_label">रुकने पर स्वतः बंद करें</string>
     <string name="about">के बारे में</string>
     <string name="about_title">Timeline Tracks के बारे में</string>
@@ -30,7 +32,7 @@
 
     <!-- Info popups -->
     <string name="interval_info_message">छोटा अंतराल Timeline को उच्च-गुणवत्ता के ट्रैक देता है;
-        लंबा अंतराल बैटरी बचाता है। डिफ़ॉल्ट, 2 मिनट से थोड़ा कम, एक अच्छा समझौता है।</string>
+        लंबा अंतराल बैटरी बचाता है। 2 मिनट से थोड़ा कम एक अच्छा समझौता है।</string>
     <string name="auto_stop_info_message">यदि 5 लगातार स्थान एक-दूसरे से 100 मीटर के भीतर हैं,
         तो ऐप मान लेता है कि आप रुके हुए हैं और स्वचालित रूप से बंद हो जाता है।</string>
 
@@ -48,5 +50,5 @@
     <!-- Notification -->
     <string name="notification_channel_name">स्थान अपडेट</string>
     <string name="notification_channel_desc">GPS ट्रैकिंग सक्रिय होने पर स्थायी सूचना</string>
-    <string name="notification_text">हर %d सेकंड में GPS पढ़ रहा है</string>
+    <string name="notification_text">हर %s में GPS पढ़ रहा है</string>
 </resources>

@@ -154,8 +154,16 @@ public class LocationService extends Service {
         }
     }
 
+    private static String formatInterval(int totalSeconds) {
+        int min = totalSeconds / 60;
+        int sec = totalSeconds % 60;
+        if (min == 0) return sec + "s";
+        if (sec == 0) return min + "m";
+        return min + "m " + sec + "s";
+    }
+
     private Notification buildNotification() {
-        int intervalSeconds = prefs.getIntervalSeconds();
+        String intervalText = formatInterval(prefs.getIntervalSeconds());
         int flags = PendingIntent.FLAG_UPDATE_CURRENT
                 | (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S ? PendingIntent.FLAG_IMMUTABLE : 0);
 
@@ -172,7 +180,7 @@ public class LocationService extends Service {
 
         return new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setContentTitle(getString(R.string.app_name))
-                .setContentText(getString(R.string.notification_text, intervalSeconds))
+                .setContentText(getString(R.string.notification_text, intervalText))
                 .setSmallIcon(R.drawable.ic_title)
                 .setContentIntent(contentPendingIntent)
                 .setOngoing(true)

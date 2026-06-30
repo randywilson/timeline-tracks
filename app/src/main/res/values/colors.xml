@@ -9,4 +9,5 @@
     <color name="link_blue">#FF1565C0</color>
     <color name="button_start">#2E7D32</color>
     <color name="button_stop">#C62828</color>
+    <color name="text_inactive">#FFBDBDBD</color>
 </resources>

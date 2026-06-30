@@ -87,29 +87,19 @@
                     android:orientation="vertical"
                     android:padding="20dp">
 
-                    <!-- Interval field with info button -->
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/interval_label"
-                        android:textColor="@color/near_black"
-                        android:textSize="12sp" />
-
+                    <!-- Interval section: label + info button -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
                         android:gravity="center_vertical"
                         android:orientation="horizontal">
 
-                        <EditText
-                            android:id="@+id/interval_field"
+                        <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:inputType="number"
-                            android:maxLength="6"
-                            tools:text="120" />
+                            android:text="@string/interval_label"
+                            android:textColor="@color/near_black" />
 
                         <ImageButton
                             android:id="@+id/interval_info_button"
@@ -119,6 +109,165 @@
                             android:background="?attr/selectableItemBackgroundBorderless"
                             android:contentDescription="@null"
                             android:padding="12dp" />
+
+                    </LinearLayout>
+
+                    <!-- Interval row 0 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/interval_radio_0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <EditText
+                            android:id="@+id/interval_min_0"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:maxLength="3"
+                            android:textColor="@color/near_black"
+                            tools:text="0" />
+
+                        <TextView
+                            android:id="@+id/interval_min_label_0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginEnd="8dp"
+                            android:text="@string/min_label"
+                            android:textColor="@color/near_black" />
+
+                        <EditText
+                            android:id="@+id/interval_sec_0"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:maxLength="3"
+                            android:textColor="@color/near_black"
+                            tools:text="50" />
+
+                        <TextView
+                            android:id="@+id/interval_sec_label_0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:text="@string/sec_label"
+                            android:textColor="@color/near_black" />
+
+                    </LinearLayout>
+
+                    <!-- Interval row 1 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/interval_radio_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <EditText
+                            android:id="@+id/interval_min_1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:maxLength="3"
+                            android:textColor="@color/near_black"
+                            tools:text="1" />
+
+                        <TextView
+                            android:id="@+id/interval_min_label_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginEnd="8dp"
+                            android:text="@string/min_label"
+                            android:textColor="@color/near_black" />
+
+                        <EditText
+                            android:id="@+id/interval_sec_1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:maxLength="3"
+                            android:textColor="@color/near_black"
+                            tools:text="50" />
+
+                        <TextView
+                            android:id="@+id/interval_sec_label_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:text="@string/sec_label"
+                            android:textColor="@color/near_black" />
+
+                    </LinearLayout>
+
+                    <!-- Interval row 2 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/interval_radio_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <EditText
+                            android:id="@+id/interval_min_2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:maxLength="3"
+                            android:textColor="@color/near_black"
+                            tools:text="5" />
+
+                        <TextView
+                            android:id="@+id/interval_min_label_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginEnd="8dp"
+                            android:text="@string/min_label"
+                            android:textColor="@color/near_black" />
+
+                        <EditText
+                            android:id="@+id/interval_sec_2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:maxLength="3"
+                            android:textColor="@color/near_black"
+                            tools:text="0" />
+
+                        <TextView
+                            android:id="@+id/interval_sec_label_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:text="@string/sec_label"
+                            android:textColor="@color/near_black" />
 
                     </LinearLayout>
 

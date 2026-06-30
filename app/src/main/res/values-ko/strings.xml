@@ -7,7 +7,9 @@
     <string name="give_permission">권한 부여</string>
 
     <!-- Main UI -->
-    <string name="interval_label">GPS 측정 간격(초)</string>
+    <string name="interval_label">GPS 샘플링 간격</string>
+    <string name="min_label">분</string>
+    <string name="sec_label">초</string>
     <string name="auto_stop_label">정지 시 자동 중지</string>
     <string name="about">정보</string>
     <string name="about_title">Timeline Tracks 정보</string>
@@ -30,7 +32,7 @@
 
     <!-- Info popups -->
     <string name="interval_info_message">간격이 짧을수록 Timeline의 트랙 품질이 높아지고,
-        간격이 길수록 배터리가 절약됩니다. 기본값인 2분 미만은 좋은 균형점입니다.</string>
+        간격이 길수록 배터리가 절약됩니다. 2분 미만이 좋은 균형점입니다.</string>
     <string name="auto_stop_info_message">연속 5개의 위치가 모두 100미터 이내에 있으면
         앱은 정지 상태로 판단하여 자동으로 중지합니다.</string>
 
@@ -47,5 +49,5 @@
     <!-- Notification -->
     <string name="notification_channel_name">위치 업데이트</string>
     <string name="notification_channel_desc">GPS 추적이 활성화된 동안 지속적인 알림</string>
-    <string name="notification_text">%d초마다 GPS 측정 중</string>
+    <string name="notification_text">%s마다 GPS 측정 중</string>
 </resources>

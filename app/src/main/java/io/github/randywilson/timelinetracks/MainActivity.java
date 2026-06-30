@@ -13,10 +13,11 @@ import android.os.PowerManager;
 import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
@@ -34,7 +35,12 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView permissionWarning;
     private Button givePermissionButton;
-    private EditText intervalField;
+    private final RadioButton[] intervalRadios = new RadioButton[3];
+    private final EditText[] intervalMinFields = new EditText[3];
+    private final EditText[] intervalSecFields = new EditText[3];
+    private final TextView[] intervalMinLabels = new TextView[3];
+    private final TextView[] intervalSecLabels = new TextView[3];
+    private int selectedInterval;
     private CheckBox autoStopCheckbox;
     private Button startStopButton;
     private TextView statsView;
@@ -73,15 +79,51 @@ public class MainActivity extends AppCompatActivity {
 
         permissionWarning = findViewById(R.id.permission_warning);
         givePermissionButton = findViewById(R.id.give_permission_button);
-        intervalField = findViewById(R.id.interval_field);
         autoStopCheckbox = findViewById(R.id.auto_stop_checkbox);
         startStopButton = findViewById(R.id.start_stop_button);
         statsView = findViewById(R.id.stats_view);
         TextView aboutLink = findViewById(R.id.about_link);
         TextView howItWorksLink = findViewById(R.id.how_it_works_link);
 
-        // Load saved settings
-        intervalField.setText(String.valueOf(prefs.getIntervalSeconds()));
+        int[] radioIds = {R.id.interval_radio_0, R.id.interval_radio_1, R.id.interval_radio_2};
+        int[] minIds = {R.id.interval_min_0, R.id.interval_min_1, R.id.interval_min_2};
+        int[] secIds = {R.id.interval_sec_0, R.id.interval_sec_1, R.id.interval_sec_2};
+        int[] minLabelIds = {R.id.interval_min_label_0, R.id.interval_min_label_1, R.id.interval_min_label_2};
+        int[] secLabelIds = {R.id.interval_sec_label_0, R.id.interval_sec_label_1, R.id.interval_sec_label_2};
+
+        for (int i = 0; i < 3; i++) {
+            intervalRadios[i] = findViewById(radioIds[i]);
+            intervalMinFields[i] = findViewById(minIds[i]);
+            intervalSecFields[i] = findViewById(secIds[i]);
+            intervalMinLabels[i] = findViewById(minLabelIds[i]);
+            intervalSecLabels[i] = findViewById(secLabelIds[i]);
+        }
+
+        // Load saved interval settings
+        selectedInterval = prefs.getSelectedInterval();
+        for (int i = 0; i < 3; i++) {
+            intervalMinFields[i].setText(String.valueOf(prefs.getSlotMinutes(i)));
+            intervalSecFields[i].setText(String.valueOf(prefs.getSlotSeconds(i)));
+            intervalRadios[i].setChecked(i == selectedInterval);
+        }
+        updateIntervalRowColors();
+
+        View.OnClickListener radioClickListener = v -> {
+            for (int i = 0; i < 3; i++) {
+                if (intervalRadios[i] == v) {
+                    selectedInterval = i;
+                    break;
+                }
+            }
+            for (int i = 0; i < 3; i++) {
+                intervalRadios[i].setChecked(i == selectedInterval);
+            }
+            updateIntervalRowColors();
+        };
+        for (RadioButton radio : intervalRadios) {
+            radio.setOnClickListener(radioClickListener);
+        }
+
         autoStopCheckbox.setChecked(prefs.getAutoStop());
 
         View intervalInfoButton = findViewById(R.id.interval_info_button);
@@ -137,6 +179,18 @@ public class MainActivity extends AppCompatActivity {
         super.onPause();
         saveSettings();
         statsHandler.removeCallbacks(statsTicker);
+    }
+
+    private void updateIntervalRowColors() {
+        int activeColor = ContextCompat.getColor(this, R.color.near_black);
+        int inactiveColor = ContextCompat.getColor(this, R.color.text_inactive);
+        for (int i = 0; i < 3; i++) {
+            int color = (i == selectedInterval) ? activeColor : inactiveColor;
+            intervalMinFields[i].setTextColor(color);
+            intervalMinLabels[i].setTextColor(color);
+            intervalSecFields[i].setTextColor(color);
+            intervalSecLabels[i].setTextColor(color);
+        }
     }
 
     private void checkPermissions() {
@@ -232,7 +286,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 break;
-
         }
     }
 
@@ -283,18 +336,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void saveSettings() {
-        String text = intervalField.getText().toString().trim();
-        if (!text.isEmpty()) {
-            try {
-                int interval = Integer.parseInt(text);
-                if (interval > 0) {
-                    prefs.setIntervalSeconds(interval);
-                }
-            } catch (NumberFormatException e) {
-                // Ignore invalid input
-            }
+        for (int i = 0; i < 3; i++) {
+            int min = parseFieldOrZero(intervalMinFields[i]);
+            int sec = parseFieldOrZero(intervalSecFields[i]);
+            prefs.setSlot(i, min, sec);
+            // Reflect normalized values (e.g. 2m 90s → 3m 30s) back to the fields
+            intervalMinFields[i].setText(String.valueOf(prefs.getSlotMinutes(i)));
+            intervalSecFields[i].setText(String.valueOf(prefs.getSlotSeconds(i)));
         }
+        prefs.setSelectedInterval(selectedInterval);
         prefs.setAutoStop(autoStopCheckbox.isChecked());
+    }
+
+    private int parseFieldOrZero(EditText field) {
+        String text = field.getText().toString().trim();
+        if (text.isEmpty()) return 0;
+        try {
+            return Integer.parseInt(text);
+        } catch (NumberFormatException e) {
+            return 0;
+        }
     }
 
     private void updateStatsView() {

@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 public class Prefs {
 
     private static final String PREF_FILE = "prefs";
-    private static final String KEY_INTERVAL = "interval_seconds";
     private static final String KEY_AUTO_STOP = "auto_stop";
     private static final String KEY_RUNNING = "running";
     private static final String KEY_BATTERY_OPT_ASKED = "battery_opt_asked";
@@ -14,11 +13,14 @@ public class Prefs {
     private static final String KEY_STOP_TIME = "stop_time";
     private static final String KEY_LOCATION_COUNT = "location_count";
     private static final String KEY_STOP_REASON = "stop_reason";
+    private static final String KEY_SELECTED = "selected_interval";
 
     public static final String STOP_REASON_USER = "stopped";
     public static final String STOP_REASON_AUTO = "auto-stopped";
 
-    private static final int DEFAULT_INTERVAL = 110;
+    private static final int[] DEFAULT_SLOT_MINUTES = {0, 1, 5};
+    private static final int[] DEFAULT_SLOT_SECONDS = {50, 50, 0};
+    private static final int DEFAULT_SELECTED = 1;
     private static final boolean DEFAULT_AUTO_STOP = true;
 
     private final SharedPreferences prefs;
@@ -27,12 +29,34 @@ public class Prefs {
         prefs = context.getSharedPreferences(PREF_FILE, Context.MODE_PRIVATE);
     }
 
-    public int getIntervalSeconds() {
-        return prefs.getInt(KEY_INTERVAL, DEFAULT_INTERVAL);
+    public int getSlotMinutes(int slot) {
+        return prefs.getInt("interval_" + slot + "_min", DEFAULT_SLOT_MINUTES[slot]);
     }
 
-    public void setIntervalSeconds(int seconds) {
-        prefs.edit().putInt(KEY_INTERVAL, seconds).apply();
+    public int getSlotSeconds(int slot) {
+        return prefs.getInt("interval_" + slot + "_sec", DEFAULT_SLOT_SECONDS[slot]);
+    }
+
+    public void setSlot(int slot, int minutes, int seconds) {
+        minutes += seconds / 60;
+        seconds = seconds % 60;
+        prefs.edit()
+                .putInt("interval_" + slot + "_min", minutes)
+                .putInt("interval_" + slot + "_sec", seconds)
+                .apply();
+    }
+
+    public int getSelectedInterval() {
+        return prefs.getInt(KEY_SELECTED, DEFAULT_SELECTED);
+    }
+
+    public void setSelectedInterval(int index) {
+        prefs.edit().putInt(KEY_SELECTED, index).apply();
+    }
+
+    public int getIntervalSeconds() {
+        int sel = getSelectedInterval();
+        return getSlotMinutes(sel) * 60 + getSlotSeconds(sel);
     }
 
     public boolean getAutoStop() {

@@ -8,7 +8,9 @@
     <string name="give_permission">Berechtigung erteilen</string>
 
     <!-- Main UI -->
-    <string name="interval_label">Sekunden zwischen GPS-Messungen</string>
+    <string name="interval_label">GPS-Abtastintervall</string>
+    <string name="min_label">Min</string>
+    <string name="sec_label">Sek</string>
     <string name="auto_stop_label">Automatisch stoppen wenn stationär</string>
     <string name="about">Über</string>
     <string name="about_title">Über Timeline Tracks</string>
@@ -32,8 +34,7 @@
 
     <!-- Info popups -->
     <string name="interval_info_message">Ein kürzeres Intervall liefert Timeline hochwertigere
-        Tracks; ein längeres Intervall spart Akku. Der Standardwert von knapp unter 2 Minuten
-        ist ein guter Kompromiss.</string>
+        Tracks; ein längeres Intervall spart Akku. Knapp unter 2 Minuten ist ein guter Kompromiss.</string>
     <string name="auto_stop_info_message">Wenn 5 aufeinanderfolgende Standorte alle innerhalb
         von 100 Metern voneinander liegen, geht die App davon aus, dass du stationär bist,
         und stoppt automatisch.</string>
@@ -52,5 +53,5 @@
     <!-- Notification -->
     <string name="notification_channel_name">Standortaktualisierungen</string>
     <string name="notification_channel_desc">Dauerhafte Benachrichtigung während die GPS-Aufzeichnung aktiv ist</string>
-    <string name="notification_text">GPS-Messung alle %d Sekunden</string>
+    <string name="notification_text">GPS-Messung alle %s</string>
 </resources>

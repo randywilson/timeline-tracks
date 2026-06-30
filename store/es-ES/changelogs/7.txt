@@ -1,0 +1,1 @@
+• Ahora guarda tres intervalos de muestreo para cambiar rápidamente según la actividad.

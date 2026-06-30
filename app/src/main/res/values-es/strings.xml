@@ -8,7 +8,9 @@
     <string name="give_permission">Dar permiso</string>
 
     <!-- Main UI -->
-    <string name="interval_label">Segundos entre lecturas GPS</string>
+    <string name="interval_label">Intervalo de muestreo GPS</string>
+    <string name="min_label">min</string>
+    <string name="sec_label">seg</string>
     <string name="auto_stop_label">Detener automáticamente al quedar estático</string>
     <string name="about">Acerca de</string>
     <string name="about_title">Acerca de Timeline Tracks</string>
@@ -30,9 +32,8 @@
         y habilita las Notificaciones para Timeline Tracks.</string>
 
     <!-- Info popups -->
-    <string name="interval_info_message">Un intervalo más corto da a Timeline pistas de mayor calidad;
-        un intervalo más largo ahorra batería. El valor predeterminado, algo menos de 2 minutos,
-        es un buen equilibrio.</string>
+    <string name="interval_info_message">Un intervalo más corto da a Timeline pistas de mayor
+        calidad; un intervalo más largo ahorra batería. Algo menos de 2 minutos es un buen equilibrio.</string>
     <string name="auto_stop_info_message">Si 5 ubicaciones consecutivas están todas dentro de
         100 metros entre sí, la aplicación asume que estás estacionario y se detiene automáticamente.</string>
 
@@ -51,5 +52,5 @@
     <!-- Notification -->
     <string name="notification_channel_name">Actualizaciones de ubicación</string>
     <string name="notification_channel_desc">Notificación persistente mientras el seguimiento GPS está activo</string>
-    <string name="notification_text">Leyendo GPS cada %d segundos</string>
+    <string name="notification_text">Leyendo GPS cada %s</string>
 </resources>

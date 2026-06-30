@@ -10,7 +10,9 @@
     <string name="give_permission">Give Permission</string>
 
     <!-- Main UI -->
-    <string name="interval_label">Seconds between GPS readings</string>
+    <string name="interval_label">GPS sampling interval</string>
+    <string name="min_label">min</string>
+    <string name="sec_label">sec</string>
     <string name="auto_stop_label">Auto-stop when stationary</string>
     <string name="about">About</string>
     <string name="about_title">About Timeline Tracks</string>
@@ -33,8 +35,7 @@
 
     <!-- Info popups -->
     <string name="interval_info_message">A shorter interval gives Timeline higher-quality tracks;
-        a longer interval saves battery. The default, just under 2 minutes, is a good compromise.
-    </string>
+        a longer interval saves battery. Just under 2 minutes is a good compromise.</string>
     <string name="auto_stop_info_message">If 5 consecutive locations are all within 100 meters of
         each other, the app assumes you\'re stationary and stops automatically.</string>
 
@@ -51,5 +52,5 @@
     <!-- Notification -->
     <string name="notification_channel_name">Location Updates</string>
     <string name="notification_channel_desc">Persistent notification while GPS tracking is active</string>
-    <string name="notification_text">Reading GPS every %d seconds</string>
+    <string name="notification_text">Reading GPS every %s</string>
 </resources>

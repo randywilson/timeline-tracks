@@ -57,9 +57,33 @@ public class PrefsTest {
     }
 
     @Test
-    public void intervalSeconds_roundTrips() {
-        prefs.setIntervalSeconds(60);
-        assertEquals(60, prefs.getIntervalSeconds());
+    public void slotValues_defaultAndRoundTrip() {
+        assertEquals(1, prefs.getSlotMinutes(1));
+        assertEquals(50, prefs.getSlotSeconds(1));
+        prefs.setSlot(1, 3, 30);
+        assertEquals(3, prefs.getSlotMinutes(1));
+        assertEquals(30, prefs.getSlotSeconds(1));
+    }
+
+    @Test
+    public void setSlot_normalizesOverflowSeconds() {
+        prefs.setSlot(0, 2, 90);
+        assertEquals(3, prefs.getSlotMinutes(0));
+        assertEquals(30, prefs.getSlotSeconds(0));
+    }
+
+    @Test
+    public void selectedInterval_defaultAndRoundTrip() {
+        assertEquals(1, prefs.getSelectedInterval());
+        prefs.setSelectedInterval(2);
+        assertEquals(2, prefs.getSelectedInterval());
+    }
+
+    @Test
+    public void getIntervalSeconds_usesSelectedSlot() {
+        prefs.setSlot(1, 2, 30);
+        prefs.setSelectedInterval(1);
+        assertEquals(150, prefs.getIntervalSeconds());
     }
 
     @Test
