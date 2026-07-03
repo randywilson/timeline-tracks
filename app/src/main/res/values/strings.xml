@@ -16,9 +16,11 @@
     <string name="auto_stop_label">Auto-stop when stationary</string>
     <string name="about">About</string>
     <string name="about_title">About Timeline Tracks</string>
-    <string name="about_message">This app is an independent utility and is not affiliated with,
-        endorsed by, or a product of Google LLC.\n\nWhy? I built it for my own use, and others
-        might find it useful.</string>
+    <string name="about_message">Timeline Tracks is 100% privacy-safe: it never stores your
+        locations, runs entirely on your phone, and has no internet permission, so it can\'t send
+        your location data anywhere.\n\nThis app is an independent utility and is not affiliated
+        with, endorsed by, or a product of Google LLC.\n\nWhy? I built it for my own use, and
+        others might find it useful.</string>
     <string name="how_it_works">How it works</string>
     <string name="start">Start</string>
     <string name="stop">Stop</string>
@@ -44,9 +46,7 @@
     <string name="how_it_works_message">Start Timeline Tracks when you start a hike, boat ride,
         or other activities far from Wi-Fi access points.\n\nTimeline Tracks runs in the background,
         requesting GPS locations. Google Timeline (in the Google Maps app), and any other app on
-        your phone, receives the locations for free.\n\nTimeline Tracks is 100% privacy-safe: it
-        never stores your locations, runs entirely on your phone, and has no internet permission,
-        so it can\'t send your location data anywhere.\n\nFor best results, make sure battery
+        your phone, receives the locations for free.\n\nFor best results, make sure battery
         optimization is set to \'Unrestricted\' for this app in Android Settings.</string>
 
     <!-- Notification -->

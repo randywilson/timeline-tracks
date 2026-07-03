@@ -14,9 +14,11 @@
     <string name="auto_stop_label">Parar automaticamente quando parado</string>
     <string name="about">Sobre</string>
     <string name="about_title">Sobre o Timeline Tracks</string>
-    <string name="about_message">Este aplicativo é um utilitário independente e não é afiliado,
-        endossado ou produzido pelo Google LLC.\n\nPor quê? Desenvolvi para uso próprio
-        e outros podem achá-lo útil.</string>
+    <string name="about_message">O Timeline Tracks é 100% seguro para privacidade: nunca armazena
+        suas localizações, funciona inteiramente no seu telefone e não tem permissão de internet,
+        portanto não pode enviar seus dados de localização para lugar nenhum.\n\nEste aplicativo é
+        um utilitário independente e não é afiliado, endossado ou produzido pelo Google LLC.\n\nPor
+        quê? Desenvolvi para uso próprio e outros podem achá-lo útil.</string>
     <string name="how_it_works">Como funciona</string>
     <string name="start">Iniciar</string>
     <string name="stop">Parar</string>
@@ -43,11 +45,9 @@
         passeio de barco ou outras atividades longe de pontos de acesso Wi-Fi.\n\nO Timeline Tracks
         roda em segundo plano, solicitando localizações GPS. O Google Timeline (no aplicativo
         Google Maps) e qualquer outro aplicativo no seu telefone recebe as localizações
-        automaticamente.\n\nO Timeline Tracks é 100% seguro para privacidade: nunca armazena suas
-        localizações, funciona inteiramente no seu telefone e não tem permissão de internet,
-        portanto não pode enviar seus dados de localização para lugar nenhum.\n\nPara melhores
-        resultados, certifique-se de que a otimização de bateria esteja definida como
-        \'Sem restrições\' para este aplicativo nas Configurações do Android.</string>
+        automaticamente.\n\nPara melhores resultados, certifique-se de que a otimização de bateria
+        esteja definida como \'Sem restrições\' para este aplicativo nas Configurações do
+        Android.</string>
 
     <!-- Notification -->
     <string name="notification_channel_name">Atualizações de localização</string>

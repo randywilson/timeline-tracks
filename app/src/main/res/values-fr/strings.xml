@@ -14,9 +14,12 @@
     <string name="auto_stop_label">Arrêt automatique à l\'arrêt</string>
     <string name="about">À propos</string>
     <string name="about_title">À propos de Timeline Tracks</string>
-    <string name="about_message">Cette application est un utilitaire indépendant et n\'est pas
-        affiliée à Google LLC, ni approuvée ou produite par celle-ci.\n\nPourquoi ? Je l\'ai
-        créée pour mon usage personnel, et d\'autres pourraient la trouver utile.</string>
+    <string name="about_message">Timeline Tracks est 100 % sûr pour la vie privée : il ne stocke
+        jamais vos positions, fonctionne entièrement sur votre téléphone et n\'a pas d\'autorisation
+        internet, donc il ne peut pas envoyer vos données de position nulle part.\n\nCette
+        application est un utilitaire indépendant et n\'est pas affiliée à Google LLC, ni approuvée
+        ou produite par celle-ci.\n\nPourquoi ? Je l\'ai créée pour mon usage personnel, et
+        d\'autres pourraient la trouver utile.</string>
     <string name="how_it_works">Comment ça marche</string>
     <string name="start">Démarrer</string>
     <string name="stop">Arrêter</string>
@@ -45,12 +48,9 @@
         randonnée, une balade en bateau ou d\'autres activités loin des points d\'accès
         Wi-Fi.\n\nTimeline Tracks fonctionne en arrière-plan en demandant des positions GPS.
         Google Timeline (dans l\'application Google Maps) et toute autre application sur votre
-        téléphone reçoit les positions automatiquement.\n\nTimeline Tracks est 100 % sûr pour
-        la vie privée : il ne stocke jamais vos positions, fonctionne entièrement sur votre
-        téléphone et n\'a pas d\'autorisation internet, donc il ne peut pas envoyer vos données
-        de position nulle part.\n\nPour de meilleurs résultats, assurez-vous que l\'optimisation
-        de la batterie est définie sur « Sans restriction » pour cette application dans les
-        Paramètres Android.</string>
+        téléphone reçoit les positions automatiquement.\n\nPour de meilleurs résultats, assurez-vous
+        que l\'optimisation de la batterie est définie sur « Sans restriction » pour cette
+        application dans les Paramètres Android.</string>
 
     <!-- Notification -->
     <string name="notification_channel_name">Mises à jour de position</string>

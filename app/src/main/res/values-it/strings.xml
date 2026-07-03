@@ -14,9 +14,11 @@
     <string name="auto_stop_label">Arresto automatico quando fermo</string>
     <string name="about">Info</string>
     <string name="about_title">Info su Timeline Tracks</string>
-    <string name="about_message">Questa app è un\'utilità indipendente e non è affiliata,
-        approvata o prodotta da Google LLC.\n\nPerché? L\'ho sviluppata per uso personale
-        e potrebbe essere utile anche ad altri.</string>
+    <string name="about_message">Timeline Tracks è sicuro al 100% per la privacy: non memorizza
+        mai le tue posizioni, funziona interamente sul tuo telefono e non ha il permesso di
+        internet, quindi non può inviare i tuoi dati di posizione da nessuna parte.\n\nQuesta app
+        è un\'utilità indipendente e non è affiliata, approvata o prodotta da Google LLC.\n\nPerché?
+        L\'ho sviluppata per uso personale e potrebbe essere utile anche ad altri.</string>
     <string name="how_it_works">Come funziona</string>
     <string name="start">Avvia</string>
     <string name="stop">Ferma</string>
@@ -42,12 +44,9 @@
     <string name="how_it_works_message">Avvia Timeline Tracks quando inizi un\'escursione,
         una gita in barca o altre attività lontano dai punti di accesso Wi-Fi.\n\nTimeline Tracks
         funziona in background, richiedendo posizioni GPS. Google Timeline (nell\'app Google Maps)
-        e qualsiasi altra app sul tuo telefono riceve le posizioni automaticamente.\n\nTimeline Tracks
-        è sicuro al 100% per la privacy: non memorizza mai le tue posizioni, funziona interamente
-        sul tuo telefono e non ha il permesso di internet, quindi non può inviare i tuoi dati
-        di posizione da nessuna parte.\n\nPer i migliori risultati, assicurati che l\'ottimizzazione
-        della batteria sia impostata su \'Senza restrizioni\' per questa app nelle
-        Impostazioni Android.</string>
+        e qualsiasi altra app sul tuo telefono riceve le posizioni automaticamente.\n\nPer i migliori
+        risultati, assicurati che l\'ottimizzazione della batteria sia impostata su \'Senza
+        restrizioni\' per questa app nelle Impostazioni Android.</string>
 
     <!-- Notification -->
     <string name="notification_channel_name">Aggiornamenti posizione</string>

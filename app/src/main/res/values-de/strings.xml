@@ -14,9 +14,12 @@
     <string name="auto_stop_label">Automatisch stoppen wenn stationär</string>
     <string name="about">Über</string>
     <string name="about_title">Über Timeline Tracks</string>
-    <string name="about_message">Diese App ist ein unabhängiges Dienstprogramm und ist nicht mit
-        Google LLC verbunden, wird nicht von Google LLC unterstützt oder hergestellt.\n\nWarum?
-        Ich habe sie für den eigenen Gebrauch entwickelt, und andere könnten sie nützlich finden.</string>
+    <string name="about_message">Timeline Tracks ist 100 % datenschutzkonform: Es speichert niemals
+        deine Standorte, läuft vollständig auf deinem Telefon und hat keine Internetberechtigung,
+        sodass es deine Standortdaten nirgendwohin senden kann.\n\nDiese App ist ein unabhängiges
+        Dienstprogramm und ist nicht mit Google LLC verbunden, wird nicht von Google LLC unterstützt
+        oder hergestellt.\n\nWarum? Ich habe sie für den eigenen Gebrauch entwickelt, und andere
+        könnten sie nützlich finden.</string>
     <string name="how_it_works">So funktioniert es</string>
     <string name="start">Starten</string>
     <string name="stop">Stoppen</string>
@@ -44,11 +47,9 @@
     <string name="how_it_works_message">Starte Timeline Tracks, wenn du eine Wanderung, Bootsfahrt
         oder andere Aktivitäten weit von WLAN-Zugangspunkten entfernt beginnst.\n\nTimeline Tracks
         läuft im Hintergrund und fordert GPS-Standorte an. Google Timeline (in der Google Maps App)
-        und jede andere App auf deinem Telefon empfängt die Standorte automatisch.\n\nTimeline Tracks
-        ist 100 % datenschutzkonform: Es speichert niemals deine Standorte, läuft vollständig auf
-        deinem Telefon und hat keine Internetberechtigung, sodass es deine Standortdaten nirgendwohin
-        senden kann.\n\nFür beste Ergebnisse stelle sicher, dass die Akku-Optimierung für diese App
-        in den Android-Einstellungen auf „Nicht optimiert" gesetzt ist.</string>
+        und jede andere App auf deinem Telefon empfängt die Standorte automatisch.\n\nFür beste
+        Ergebnisse stelle sicher, dass die Akku-Optimierung für diese App in den Android-Einstellungen
+        auf „Nicht optimiert" gesetzt ist.</string>
 
     <!-- Notification -->
     <string name="notification_channel_name">Standortaktualisierungen</string>

@@ -14,9 +14,12 @@
     <string name="auto_stop_label">Berhenti otomatis saat diam</string>
     <string name="about">Tentang</string>
     <string name="about_title">Tentang Timeline Tracks</string>
-    <string name="about_message">Aplikasi ini adalah utilitas independen dan tidak berafiliasi
-        dengan, didukung oleh, atau merupakan produk dari Google LLC.\n\nMengapa? Saya membuatnya
-        untuk penggunaan pribadi, dan mungkin berguna bagi orang lain.</string>
+    <string name="about_message">Timeline Tracks 100% aman untuk privasi: tidak pernah menyimpan
+        lokasi Anda, berjalan sepenuhnya di ponsel Anda, dan tidak memiliki izin internet, sehingga
+        tidak dapat mengirim data lokasi Anda ke mana pun.\n\nAplikasi ini adalah utilitas
+        independen dan tidak berafiliasi dengan, didukung oleh, atau merupakan produk dari Google
+        LLC.\n\nMengapa? Saya membuatnya untuk penggunaan pribadi, dan mungkin berguna bagi orang
+        lain.</string>
     <string name="how_it_works">Cara kerja</string>
     <string name="start">Mulai</string>
     <string name="stop">Berhenti</string>
@@ -42,11 +45,9 @@
     <string name="how_it_works_message">Mulai Timeline Tracks saat Anda memulai pendakian,
         perjalanan perahu, atau aktivitas lain yang jauh dari titik akses Wi-Fi.\n\nTimeline Tracks
         berjalan di latar belakang, meminta lokasi GPS. Google Timeline (di aplikasi Google Maps),
-        dan aplikasi lain di ponsel Anda, menerima lokasi secara otomatis.\n\nTimeline Tracks
-        100% aman untuk privasi: tidak pernah menyimpan lokasi Anda, berjalan sepenuhnya di
-        ponsel Anda, dan tidak memiliki izin internet, sehingga tidak dapat mengirim data lokasi
-        Anda ke mana pun.\n\nUntuk hasil terbaik, pastikan optimisasi baterai diatur ke
-        \'Tidak dibatasi\' untuk aplikasi ini di Pengaturan Android.</string>
+        dan aplikasi lain di ponsel Anda, menerima lokasi secara otomatis.\n\nUntuk hasil terbaik,
+        pastikan optimisasi baterai diatur ke \'Tidak dibatasi\' untuk aplikasi ini di Pengaturan
+        Android.</string>
 
     <!-- Notification -->
     <string name="notification_channel_name">Pembaruan Lokasi</string>

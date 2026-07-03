@@ -14,9 +14,12 @@
     <string name="auto_stop_label">Detener automáticamente al quedar estático</string>
     <string name="about">Acerca de</string>
     <string name="about_title">Acerca de Timeline Tracks</string>
-    <string name="about_message">Esta aplicación es una utilidad independiente y no está afiliada,
-        respaldada ni es un producto de Google LLC.\n\n¿Por qué? La desarrollé para uso propio
-        y puede que otros también la encuentren útil.</string>
+    <string name="about_message">Timeline Tracks es 100% seguro para la privacidad: nunca almacena
+        tus ubicaciones, se ejecuta completamente en tu teléfono y no tiene permiso de internet,
+        por lo que no puede enviar tus datos de ubicación a ningún lado.\n\nEsta aplicación es una
+        utilidad independiente y no está afiliada, respaldada ni es un producto de Google
+        LLC.\n\n¿Por qué? La desarrollé para uso propio y puede que otros también la encuentren
+        útil.</string>
     <string name="how_it_works">Cómo funciona</string>
     <string name="start">Iniciar</string>
     <string name="stop">Detener</string>
@@ -42,12 +45,9 @@
     <string name="how_it_works_message">Inicia Timeline Tracks cuando comiences una caminata,
         un paseo en bote u otras actividades lejos de puntos de acceso Wi-Fi.\n\nTimeline Tracks
         se ejecuta en segundo plano, solicitando ubicaciones GPS. Google Timeline (en la aplicación
-        Google Maps) y cualquier otra aplicación en tu teléfono recibe las ubicaciones automáticamente.\n\nTimeline Tracks
-        es 100% seguro para la privacidad: nunca almacena tus ubicaciones, se ejecuta completamente
-        en tu teléfono y no tiene permiso de internet, por lo que no puede enviar tus datos de
-        ubicación a ningún lado.\n\nPara obtener mejores resultados, asegúrate de que la
-        optimización de batería esté configurada como \'Sin restricciones\' para esta aplicación
-        en Configuración de Android.</string>
+        Google Maps) y cualquier otra aplicación en tu teléfono recibe las ubicaciones automáticamente.\n\nPara
+        obtener mejores resultados, asegúrate de que la optimización de batería esté configurada
+        como \'Sin restricciones\' para esta aplicación en Configuración de Android.</string>
 
     <!-- Notification -->
     <string name="notification_channel_name">Actualizaciones de ubicación</string>
