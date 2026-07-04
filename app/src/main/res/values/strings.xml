@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Timeline Tracks</string>
+    <string name="app_name" translatable="false">Timeline Tracks</string>
 
     <!-- Permission banner -->
     <string name="permission_warning">Location permission (including background access) is required.
@@ -38,8 +38,8 @@
     <!-- Info popups -->
     <string name="interval_info_message">A shorter interval gives Timeline higher-quality tracks;
         a longer interval saves battery. Just under 2 minutes is a good compromise.</string>
-    <string name="auto_stop_info_message">If 5 consecutive locations are all within 100 meters of
-        each other, the app assumes you\'re stationary and stops automatically.</string>
+    <string name="auto_stop_info_message">If your location stays within 100 meters for 10 minutes,
+        the app assumes you\'re stationary and stops automatically.</string>
 
     <!-- How It Works dialog -->
     <string name="how_it_works_title">How Timeline Tracks Works</string>
@@ -53,4 +53,5 @@
     <string name="notification_channel_name">Location Updates</string>
     <string name="notification_channel_desc">Persistent notification while GPS tracking is active</string>
     <string name="notification_text">Reading GPS every %s</string>
+    <string name="dot_separator" translatable="false">·</string>
 </resources>

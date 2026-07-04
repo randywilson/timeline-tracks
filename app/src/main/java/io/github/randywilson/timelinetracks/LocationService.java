@@ -22,7 +22,7 @@ public class LocationService extends Service {
 
     private static final int NOTIFICATION_ID = 1;
     private static final String CHANNEL_ID = "location_updates";
-    private static final int MAX_RECENT = 4;
+    private static final long AUTO_STOP_WINDOW_MILLIS = 10 * 60 * 1000L;
     private static final float AUTO_STOP_RADIUS_METERS = 100f;
 
     /** Set in onCreate, cleared in onDestroy. Allows integration tests to call test methods. */
@@ -78,7 +78,7 @@ public class LocationService extends Service {
         long intervalMillis = (long) prefs.getIntervalSeconds() * 1000;
 
         autoStopChecker = prefs.getAutoStop()
-                ? new AutoStopChecker(MAX_RECENT, AUTO_STOP_RADIUS_METERS, () -> {
+                ? new AutoStopChecker(AUTO_STOP_WINDOW_MILLIS, AUTO_STOP_RADIUS_METERS, () -> {
                     prefs.setStopTime(clock.currentTimeMillis());
                     prefs.setStopReason(Prefs.STOP_REASON_AUTO);
                     prefs.setRunning(false);

@@ -32,7 +32,7 @@
     <!-- Info popups -->
     <string name="interval_info_message">較短的間隔能為 Timeline 提供更高品質的軌跡；
         較長的間隔則省電。略低於 2 分鐘是個不錯的折衷。</string>
-    <string name="auto_stop_info_message">如果連續 5 個位置都在彼此 100 公尺以內，
+    <string name="auto_stop_info_message">如果您的位置在 100 公尺範圍內持續 10 分鐘，
         應用程式會判斷您處於靜止狀態並自動停止。</string>
 
     <!-- How It Works dialog -->

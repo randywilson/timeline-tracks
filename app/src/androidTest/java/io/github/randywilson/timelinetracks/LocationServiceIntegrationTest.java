@@ -27,12 +27,16 @@ import static org.junit.Assert.assertTrue;
  * and verifies behaviour through {@link Prefs}.
  *
  * Two variants:
- *   - autoStopEnabled:  10 moving + 5 stationary points → service auto-stops
+ *   - autoStopEnabled:  10 moving fixes, then stationary fixes spanning well past the
+ *                       10-minute auto-stop window → service auto-stops
  *   - autoStopDisabled: same sequence → service keeps running
  *
  * Distance reference (at ~37° latitude):
  *   0.01°  ≈ 1,110 m  (moving steps — well outside 100 m auto-stop radius)
  *   0.0001° ≈ 11 m    (stationary steps — well inside 100 m auto-stop radius)
+ *
+ * Fixes are timestamped 2 minutes apart via {@link Location#setTime}; auto-stop is gated
+ * on each fix's own timestamp, not wall-clock time, so the test runs instantly.
  */
 @RunWith(AndroidJUnit4.class)
 public class LocationServiceIntegrationTest {
@@ -62,11 +66,15 @@ public class LocationServiceIntegrationTest {
 
     // ── helpers ─────────────────────────────────────────────────────────────
 
-    private static Location loc(double lat, double lon) {
+    private static final long MINUTE = 60 * 1000L;
+    private static final long BASE_TIME = 1_700_000_000_000L;
+
+    private static Location loc(double lat, double lon, long timeMillis) {
         Location l = new Location("test");
         l.setLatitude(lat);
         l.setLongitude(lon);
         l.setAccuracy(10f);
+        l.setTime(timeMillis);
         return l;
     }
 
@@ -83,7 +91,8 @@ public class LocationServiceIntegrationTest {
 
     private LocationService startService(boolean autoStop) throws InterruptedException {
         prefs.setAutoStop(autoStop);
-        prefs.setIntervalSeconds(60); // irrelevant for simulation, but realistic
+        prefs.setSlot(0, 1, 0); // irrelevant for simulation, but realistic
+        prefs.setSelectedInterval(0);
         prefs.setLocationCount(0);
         prefs.setRunning(false);
         prefs.setStartTime(System.currentTimeMillis());
@@ -100,27 +109,40 @@ public class LocationServiceIntegrationTest {
     // ── test cases ───────────────────────────────────────────────────────────
 
     @Test
-    public void autoStopEnabled_stopsAfterFiveStationaryPoints() throws InterruptedException {
+    public void autoStopEnabled_stopsAfterTenStationaryMinutes() throws InterruptedException {
         LocationService service = startService(true);
 
         // First fix received immediately after start
-        service.simulateLocationReceived(loc(37.0, -122.0));
+        service.simulateLocationReceived(loc(37.0, -122.0, BASE_TIME));
         assertEquals("first fix should be counted", 1, prefs.getLocationCount());
         assertTrue("service should still be running", prefs.isRunning());
 
-        // 10 moving locations (~1,110 m steps) — no auto-stop
+        // 10 moving locations (~1,110 m steps, 2 minutes apart) — no auto-stop
         for (int i = 1; i <= 10; i++) {
-            service.simulateLocationReceived(loc(37.0 + i * 0.01, -122.0));
+            service.simulateLocationReceived(
+                    loc(37.0 + i * 0.01, -122.0, BASE_TIME + i * 2 * MINUTE));
         }
         assertEquals(11, prefs.getLocationCount());
         assertTrue("service should still be running after moving locations", prefs.isRunning());
 
-        // 5 stationary locations (~11 m steps, all within 100 m of each other).
-        // The 5th stationary point triggers the auto-stop callback synchronously.
-        for (int i = 0; i < 5; i++) {
-            service.simulateLocationReceived(loc(37.1 + i * 0.0001, -122.0));
+        // Stationary locations (~11 m steps, all within 100 m of each other), 2 minutes apart.
+        // The first few don't span 10 minutes yet (and stale moving fixes are still in the
+        // auto-stop window), so the service should still be running partway through.
+        long stationaryStart = BASE_TIME + 20 * MINUTE;
+        for (int i = 0; i < 3; i++) {
+            service.simulateLocationReceived(
+                    loc(37.1 + i * 0.0001, -122.0, stationaryStart + i * 2 * MINUTE));
         }
-        assertEquals("all 16 fixes should be counted", 16, prefs.getLocationCount());
+        assertTrue("service should still be running before the 10-minute stationary window elapses",
+                prefs.isRunning());
+
+        // Continue well past the point where the stationary window has fully elapsed and
+        // all moving fixes have aged out of the auto-stop deque.
+        for (int i = 3; i < 10; i++) {
+            service.simulateLocationReceived(
+                    loc(37.1 + i * 0.0001, -122.0, stationaryStart + i * 2 * MINUTE));
+        }
+        assertEquals("all 21 fixes should be counted", 21, prefs.getLocationCount());
 
         // Auto-stop callback sets running=false synchronously before calling stopSelf()
         assertFalse("service should have auto-stopped", prefs.isRunning());
@@ -128,24 +150,27 @@ public class LocationServiceIntegrationTest {
     }
 
     @Test
-    public void autoStopDisabled_keepsRunningAfterFiveStationaryPoints() throws InterruptedException {
+    public void autoStopDisabled_keepsRunningPastTenStationaryMinutes() throws InterruptedException {
         LocationService service = startService(false);
 
         // First fix
-        service.simulateLocationReceived(loc(37.0, -122.0));
+        service.simulateLocationReceived(loc(37.0, -122.0, BASE_TIME));
         assertEquals(1, prefs.getLocationCount());
 
         // 10 moving locations
         for (int i = 1; i <= 10; i++) {
-            service.simulateLocationReceived(loc(37.0 + i * 0.01, -122.0));
+            service.simulateLocationReceived(
+                    loc(37.0 + i * 0.01, -122.0, BASE_TIME + i * 2 * MINUTE));
         }
 
-        // 5 stationary locations — no stop because autoStop is disabled
-        for (int i = 0; i < 5; i++) {
-            service.simulateLocationReceived(loc(37.1 + i * 0.0001, -122.0));
+        // Stationary locations spanning well past 10 minutes — no stop because autoStop is disabled
+        long stationaryStart = BASE_TIME + 20 * MINUTE;
+        for (int i = 0; i < 10; i++) {
+            service.simulateLocationReceived(
+                    loc(37.1 + i * 0.0001, -122.0, stationaryStart + i * 2 * MINUTE));
         }
 
-        assertEquals("all 16 fixes should be counted", 16, prefs.getLocationCount());
+        assertEquals("all 21 fixes should be counted", 21, prefs.getLocationCount());
         assertTrue("service should still be running with autoStop disabled", prefs.isRunning());
     }
 }

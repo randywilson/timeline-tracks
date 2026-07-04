@@ -34,7 +34,7 @@
     <!-- Info popups -->
     <string name="interval_info_message">간격이 짧을수록 Timeline의 트랙 품질이 높아지고,
         간격이 길수록 배터리가 절약됩니다. 2분 미만이 좋은 균형점입니다.</string>
-    <string name="auto_stop_info_message">연속 5개의 위치가 모두 100미터 이내에 있으면
+    <string name="auto_stop_info_message">위치가 100미터 이내에서 10분 동안 유지되면
         앱은 정지 상태로 판단하여 자동으로 중지합니다.</string>
 
     <!-- How It Works dialog -->

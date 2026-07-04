@@ -1,6 +1,7 @@
 package io.github.randywilson.timelinetracks;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
@@ -242,6 +243,10 @@ public class MainActivity extends AppCompatActivity {
         openAppSettings();
     }
 
+    // Background GPS tracking while the app isn't in the foreground is this app's entire
+    // purpose, which is one of Google Play's accepted exceptions to the battery-optimization
+    // policy (see developer.android.com/training/monitoring-device-state/doze-standby).
+    @SuppressLint("BatteryLife")
     private void requestBatteryOptimizationExemption() {
         if (prefs.hasBatteryOptBeenAsked()) return;
         prefs.setBatteryOptAsked();

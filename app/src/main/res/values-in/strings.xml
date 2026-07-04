@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Permission banner -->
     <string name="permission_warning">Izin lokasi (termasuk akses latar belakang) diperlukan.
         Ketuk di bawah, lalu pilih Izin → Lokasi → Izinkan setiap saat.\n\nAplikasi ini tidak pernah
@@ -14,7 +14,7 @@
     <string name="auto_stop_label">Berhenti otomatis saat diam</string>
     <string name="about">Tentang</string>
     <string name="about_title">Tentang Timeline Tracks</string>
-    <string name="about_message">Timeline Tracks 100% aman untuk privasi: tidak pernah menyimpan
+    <string name="about_message" tools:ignore="StringFormatInvalid">Timeline Tracks 100% aman untuk privasi: tidak pernah menyimpan
         lokasi Anda, berjalan sepenuhnya di ponsel Anda, dan tidak memiliki izin internet, sehingga
         tidak dapat mengirim data lokasi Anda ke mana pun.\n\nAplikasi ini adalah utilitas
         independen dan tidak berafiliasi dengan, didukung oleh, atau merupakan produk dari Google
@@ -37,8 +37,8 @@
     <!-- Info popups -->
     <string name="interval_info_message">Interval yang lebih pendek memberikan kualitas trek yang
         lebih baik untuk Timeline; interval yang lebih panjang menghemat baterai. Sedikit di bawah 2 menit adalah kompromi yang baik.</string>
-    <string name="auto_stop_info_message">Jika 5 lokasi berurutan semuanya berada dalam 100 meter
-        satu sama lain, aplikasi menganggap Anda diam dan berhenti secara otomatis.</string>
+    <string name="auto_stop_info_message">Jika lokasi Anda tetap berada dalam 100 meter selama
+        10 menit, aplikasi menganggap Anda diam dan berhenti secara otomatis.</string>
 
     <!-- How It Works dialog -->
     <string name="how_it_works_title">Cara Kerja Timeline Tracks</string>

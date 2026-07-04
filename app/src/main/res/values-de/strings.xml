@@ -38,9 +38,9 @@
     <!-- Info popups -->
     <string name="interval_info_message">Ein kürzeres Intervall liefert Timeline hochwertigere
         Tracks; ein längeres Intervall spart Akku. Knapp unter 2 Minuten ist ein guter Kompromiss.</string>
-    <string name="auto_stop_info_message">Wenn 5 aufeinanderfolgende Standorte alle innerhalb
-        von 100 Metern voneinander liegen, geht die App davon aus, dass du stationär bist,
-        und stoppt automatisch.</string>
+    <string name="auto_stop_info_message">Wenn dein Standort 10 Minuten lang innerhalb von
+        100 Metern bleibt, geht die App davon aus, dass du stationär bist, und stoppt
+        automatisch.</string>
 
     <!-- How It Works dialog -->
     <string name="how_it_works_title">Wie Timeline Tracks funktioniert</string>

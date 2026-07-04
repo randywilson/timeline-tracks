@@ -34,7 +34,7 @@
     <!-- Info popups -->
     <string name="interval_info_message">間隔が短いほどTimelineのトラック品質が上がりますが、
         バッテリーを多く使います。約2分未満は良いバランスです。</string>
-    <string name="auto_stop_info_message">5回連続した位置情報がすべて100メートル以内に収まっている場合、
+    <string name="auto_stop_info_message">位置情報が100メートル以内に10分間とどまっている場合、
         アプリは静止していると判断して自動的に停止します。</string>
 
     <!-- How It Works dialog -->

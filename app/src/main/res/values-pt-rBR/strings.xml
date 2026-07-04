@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Permission banner -->
     <string name="permission_warning">A permissão de localização (incluindo acesso em segundo plano) é necessária.
         Toque abaixo, depois escolha Permissões → Localização → Permitir sempre.\n\nEste app nunca armazena
@@ -14,7 +14,7 @@
     <string name="auto_stop_label">Parar automaticamente quando parado</string>
     <string name="about">Sobre</string>
     <string name="about_title">Sobre o Timeline Tracks</string>
-    <string name="about_message">O Timeline Tracks é 100% seguro para privacidade: nunca armazena
+    <string name="about_message" tools:ignore="StringFormatInvalid">O Timeline Tracks é 100% seguro para privacidade: nunca armazena
         suas localizações, funciona inteiramente no seu telefone e não tem permissão de internet,
         portanto não pode enviar seus dados de localização para lugar nenhum.\n\nEste aplicativo é
         um utilitário independente e não é afiliado, endossado ou produzido pelo Google LLC.\n\nPor
@@ -36,8 +36,8 @@
     <!-- Info popups -->
     <string name="interval_info_message">Um intervalo menor dá ao Timeline trilhas de maior qualidade;
         um intervalo maior economiza bateria. Um pouco menos de 2 minutos é um bom equilíbrio.</string>
-    <string name="auto_stop_info_message">Se 5 localizações consecutivas estiverem todas dentro de
-        100 metros entre si, o aplicativo assume que você está parado e para automaticamente.</string>
+    <string name="auto_stop_info_message">Se sua localização permanecer dentro de 100 metros por
+        10 minutos, o aplicativo assume que você está parado e para automaticamente.</string>
 
     <!-- How It Works dialog -->
     <string name="how_it_works_title">Como o Timeline Tracks funciona</string>

@@ -35,7 +35,7 @@
     <!-- Info popups -->
     <string name="interval_info_message">छोटा अंतराल Timeline को उच्च-गुणवत्ता के ट्रैक देता है;
         लंबा अंतराल बैटरी बचाता है। 2 मिनट से थोड़ा कम एक अच्छा समझौता है।</string>
-    <string name="auto_stop_info_message">यदि 5 लगातार स्थान एक-दूसरे से 100 मीटर के भीतर हैं,
+    <string name="auto_stop_info_message">यदि आपका स्थान 10 मिनट तक 100 मीटर के भीतर रहता है,
         तो ऐप मान लेता है कि आप रुके हुए हैं और स्वचालित रूप से बंद हो जाता है।</string>
 
     <!-- How It Works dialog -->
