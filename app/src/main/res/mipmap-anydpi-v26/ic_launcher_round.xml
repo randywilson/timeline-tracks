@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+<!-- No <monochrome> layer: only affects Android 16 QPR2+ users who've also enabled
+     Themed Icons — a small slice of a small slice of the install base today. The OS
+     already auto-generates a reasonable themed fallback for apps without one. Revisit
+     with a proper hand-designed monochrome asset once the user base grows. -->
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MonochromeLauncherIcon">
     <background android:drawable="@drawable/ic_launcher_background" />
     <foreground android:drawable="@drawable/ic_launcher_foreground" />
 </adaptive-icon>

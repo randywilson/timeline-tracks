@@ -49,4 +49,16 @@
     <string name="notification_channel_name">位置情報の更新</string>
     <string name="notification_channel_desc">GPS追跡中は常に通知を表示します</string>
     <string name="notification_text">%sごとにGPSを測定中</string>
+
+    <!-- Stats view -->
+    <string name="elapsed_hm">%1$dh %2$dm</string>
+    <string name="elapsed_ms">%1$dm %2$ds</string>
+    <string name="elapsed_s">%1$ds</string>
+    <plurals name="points">
+        <item quantity="other">%d地点</item>
+    </plurals>
+    <string name="status_running">実行中</string>
+    <string name="status_stopped">停止</string>
+    <string name="status_auto_stopped">自動停止</string>
+    <string name="stats_line">%1$s · %2$s · %3$s</string>
 </resources>

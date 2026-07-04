@@ -52,4 +52,18 @@
     <string name="notification_channel_name">Aggiornamenti posizione</string>
     <string name="notification_channel_desc">Notifica persistente mentre il tracciamento GPS è attivo</string>
     <string name="notification_text">Lettura GPS ogni %s</string>
+
+    <!-- Stats view -->
+    <string name="elapsed_hm">%1$dh %2$dm</string>
+    <string name="elapsed_ms">%1$dm %2$ds</string>
+    <string name="elapsed_s">%1$ds</string>
+    <plurals name="points">
+        <item quantity="one">%d punto</item>
+        <item quantity="many">%d punti</item>
+        <item quantity="other">%d punti</item>
+    </plurals>
+    <string name="status_running">in esecuzione</string>
+    <string name="status_stopped">fermato</string>
+    <string name="status_auto_stopped">fermato automaticamente</string>
+    <string name="stats_line">%1$s · %2$s · %3$s</string>
 </resources>

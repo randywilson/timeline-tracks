@@ -53,4 +53,16 @@
     <string name="notification_channel_name">Pembaruan Lokasi</string>
     <string name="notification_channel_desc">Notifikasi persisten saat pelacakan GPS aktif</string>
     <string name="notification_text">Membaca GPS setiap %s</string>
+
+    <!-- Stats view -->
+    <string name="elapsed_hm">%1$dh %2$dm</string>
+    <string name="elapsed_ms">%1$dm %2$ds</string>
+    <string name="elapsed_s">%1$ds</string>
+    <plurals name="points">
+        <item quantity="other">%d titik</item>
+    </plurals>
+    <string name="status_running">berjalan</string>
+    <string name="status_stopped">berhenti</string>
+    <string name="status_auto_stopped">berhenti otomatis</string>
+    <string name="stats_line">%1$s · %2$s · %3$s</string>
 </resources>

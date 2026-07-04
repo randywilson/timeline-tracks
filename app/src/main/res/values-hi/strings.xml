@@ -51,4 +51,17 @@
     <string name="notification_channel_name">स्थान अपडेट</string>
     <string name="notification_channel_desc">GPS ट्रैकिंग सक्रिय होने पर स्थायी सूचना</string>
     <string name="notification_text">हर %s में GPS पढ़ रहा है</string>
+
+    <!-- Stats view -->
+    <string name="elapsed_hm">%1$dh %2$dm</string>
+    <string name="elapsed_ms">%1$dm %2$ds</string>
+    <string name="elapsed_s">%1$ds</string>
+    <plurals name="points">
+        <item quantity="one">%d बिंदु</item>
+        <item quantity="other">%d बिंदु</item>
+    </plurals>
+    <string name="status_running">चल रहा है</string>
+    <string name="status_stopped">रुका हुआ</string>
+    <string name="status_auto_stopped">स्वतः रुका हुआ</string>
+    <string name="stats_line">%1$s · %2$s · %3$s</string>
 </resources>

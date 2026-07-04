@@ -53,4 +53,18 @@
     <string name="notification_channel_name">Actualizaciones de ubicación</string>
     <string name="notification_channel_desc">Notificación persistente mientras el seguimiento GPS está activo</string>
     <string name="notification_text">Leyendo GPS cada %s</string>
+
+    <!-- Stats view -->
+    <string name="elapsed_hm">%1$dh %2$dm</string>
+    <string name="elapsed_ms">%1$dm %2$ds</string>
+    <string name="elapsed_s">%1$ds</string>
+    <plurals name="points">
+        <item quantity="one">%d punto</item>
+        <item quantity="many">%d puntos</item>
+        <item quantity="other">%d puntos</item>
+    </plurals>
+    <string name="status_running">en ejecución</string>
+    <string name="status_stopped">detenido</string>
+    <string name="status_auto_stopped">detenido automáticamente</string>
+    <string name="stats_line">%1$s · %2$s · %3$s</string>
 </resources>

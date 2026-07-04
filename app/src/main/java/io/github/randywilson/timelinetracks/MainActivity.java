@@ -380,16 +380,25 @@ public class MainActivity extends AppCompatActivity {
 
         String elapsed;
         if (h > 0) {
-            elapsed = h + "h " + m + "m";
+            elapsed = getString(R.string.elapsed_hm, h, m);
         } else if (m > 0) {
-            elapsed = m + "m " + s + "s";
+            elapsed = getString(R.string.elapsed_ms, m, s);
         } else {
-            elapsed = s + "s";
+            elapsed = getString(R.string.elapsed_s, s);
         }
 
-        String points = count == 1 ? "1 point" : count + " points";
-        String status = prefs.isRunning() ? "running" : prefs.getStopReason();
-        statsView.setText(elapsed + " · " + points + " · " + status);
+        String points = getResources().getQuantityString(R.plurals.points, count, count);
+
+        String status;
+        if (prefs.isRunning()) {
+            status = getString(R.string.status_running);
+        } else if (Prefs.STOP_REASON_AUTO.equals(prefs.getStopReason())) {
+            status = getString(R.string.status_auto_stopped);
+        } else {
+            status = getString(R.string.status_stopped);
+        }
+
+        statsView.setText(getString(R.string.stats_line, elapsed, points, status));
     }
 
     private void showHowItWorksDialog() {

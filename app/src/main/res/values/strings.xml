@@ -54,4 +54,17 @@
     <string name="notification_channel_desc">Persistent notification while GPS tracking is active</string>
     <string name="notification_text">Reading GPS every %s</string>
     <string name="dot_separator" translatable="false">·</string>
+
+    <!-- Stats view -->
+    <string name="elapsed_hm">%1$dh %2$dm</string>
+    <string name="elapsed_ms">%1$dm %2$ds</string>
+    <string name="elapsed_s">%1$ds</string>
+    <plurals name="points">
+        <item quantity="one">%d point</item>
+        <item quantity="other">%d points</item>
+    </plurals>
+    <string name="status_running">running</string>
+    <string name="status_stopped">stopped</string>
+    <string name="status_auto_stopped">auto-stopped</string>
+    <string name="stats_line">%1$s · %2$s · %3$s</string>
 </resources>

@@ -49,4 +49,16 @@
     <string name="notification_channel_name">위치 업데이트</string>
     <string name="notification_channel_desc">GPS 추적이 활성화된 동안 지속적인 알림</string>
     <string name="notification_text">%s마다 GPS 측정 중</string>
+
+    <!-- Stats view -->
+    <string name="elapsed_hm">%1$dh %2$dm</string>
+    <string name="elapsed_ms">%1$dm %2$ds</string>
+    <string name="elapsed_s">%1$ds</string>
+    <plurals name="points">
+        <item quantity="other">%d 지점</item>
+    </plurals>
+    <string name="status_running">실행 중</string>
+    <string name="status_stopped">중지됨</string>
+    <string name="status_auto_stopped">자동 중지됨</string>
+    <string name="stats_line">%1$s · %2$s · %3$s</string>
 </resources>
