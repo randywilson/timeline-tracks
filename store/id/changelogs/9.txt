@@ -1,0 +1,3 @@
+• Berhenti otomatis kini menunggu 10 menit di tempat yang sama, bukan hanya beberapa titik GPS.
+• Memperbaiki baris status yang sebelumnya selalu muncul dalam bahasa Inggris.
+• Perbaikan kecil.

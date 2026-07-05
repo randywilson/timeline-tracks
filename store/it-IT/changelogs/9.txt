@@ -1,0 +1,3 @@
+• L'arresto automatico ora attende 10 minuti nello stesso posto, invece di poche posizioni GPS.
+• Risolto il problema della riga di stato sempre in inglese.
+• Piccole correzioni.

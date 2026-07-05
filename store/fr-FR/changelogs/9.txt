@@ -1,0 +1,3 @@
+• L'arrêt automatique attend désormais 10 minutes au même endroit, au lieu de quelques positions GPS seulement.
+• Correction de la ligne d'état qui s'affichait toujours en anglais.
+• Petites corrections.

@@ -1,0 +1,3 @@
+• A parada automática agora espera 10 minutos no mesmo local, em vez de apenas alguns pontos de GPS.
+• Corrigida a linha de status que sempre aparecia em inglês.
+• Pequenas correções.

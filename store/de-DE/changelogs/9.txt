@@ -1,0 +1,3 @@
+• Der Auto-Stopp wartet jetzt 10 Minuten am selben Ort, statt nur wenige GPS-Punkte abzuwarten.
+• Die Statuszeile wurde behoben, die zuvor immer auf Englisch angezeigt wurde.
+• Kleine Verbesserungen.

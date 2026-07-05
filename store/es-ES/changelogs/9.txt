@@ -1,0 +1,3 @@
+• La detención automática ahora espera 10 minutos en el mismo lugar, no solo unas pocas ubicaciones GPS.
+• Se corrigió la línea de estado, que antes siempre se mostraba en inglés.
+• Pequeñas correcciones.
