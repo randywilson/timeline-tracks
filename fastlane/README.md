@@ -23,6 +23,14 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 Upload store listings (metadata only, no APK/AAB)
 
+### android upload_screenshots
+
+```sh
+[bundle exec] fastlane android upload_screenshots
+```
+
+Upload store listing screenshots (images only, no metadata/APK/AAB)
+
 ### android upload_changelogs
 
 ```sh

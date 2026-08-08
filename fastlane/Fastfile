@@ -15,6 +15,20 @@ platform :android do
     )
   end
 
+  desc "Upload store listing screenshots (images only, no metadata/APK/AAB)"
+  lane :upload_screenshots do
+    upload_to_play_store(
+      track: "production",
+      metadata_path: "store",
+      skip_upload_apk: true,
+      skip_upload_aab: true,
+      skip_upload_metadata: true,
+      skip_upload_changelogs: true,
+      skip_upload_images: false,
+      skip_upload_screenshots: false
+    )
+  end
+
   desc "Upload release notes for the current version (changelogs only)"
   lane :upload_changelogs do |options|
     upload_to_play_store(
