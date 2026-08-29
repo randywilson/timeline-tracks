@@ -33,7 +33,7 @@ platform :android do
   lane :upload_changelogs do |options|
     upload_to_play_store(
       track: options[:track] || "internal",
-      version_code: options[:version_code] || 4,
+      version_code: options[:version_code] || 9,
       metadata_path: "store",
       skip_upload_apk: true,
       skip_upload_aab: true,
